@@ -1,0 +1,276 @@
+.button.btn-main,
+.file-label.btn-main,
+.ui-button.btn-main,
+button.btn-main,
+input[type=button].btn-main,
+input[type=reset].btn-main,
+input[type=submit].btn-main {
+    background-color: var(--main-color);
+    border-color: var(--main-color)
+}
+
+.button.btn-main:active,
+.button.btn-main:hover,
+.file-label.btn-main:active,
+.file-label.btn-main:hover,
+.ui-button.btn-main:active,
+.ui-button.btn-main:hover,
+button.btn-main:active,
+button.btn-main:hover,
+input[type=button].btn-main:active,
+input[type=button].btn-main:hover,
+input[type=reset].btn-main:active,
+input[type=reset].btn-main:hover,
+input[type=submit].btn-main:active,
+input[type=submit].btn-main:hover {
+    background-color: var(--sub-color);
+    border-color: var(--sub-color)
+}
+
+.button.btn-main.disabled:active,
+.button.btn-main.disabled:hover,
+.button.btn-main:disabled:active,
+.button.btn-main:disabled:hover,
+.file-label.btn-main.disabled:active,
+.file-label.btn-main.disabled:hover,
+.file-label.btn-main:disabled:active,
+.file-label.btn-main:disabled:hover,
+.ui-button.btn-main.disabled:active,
+.ui-button.btn-main.disabled:hover,
+.ui-button.btn-main:disabled:active,
+.ui-button.btn-main:disabled:hover,
+button.btn-main.disabled:active,
+button.btn-main.disabled:hover,
+button.btn-main:disabled:active,
+button.btn-main:disabled:hover,
+input[type=button].btn-main.disabled:active,
+input[type=button].btn-main.disabled:hover,
+input[type=button].btn-main:disabled:active,
+input[type=button].btn-main:disabled:hover,
+input[type=reset].btn-main.disabled:active,
+input[type=reset].btn-main.disabled:hover,
+input[type=reset].btn-main:disabled:active,
+input[type=reset].btn-main:disabled:hover,
+input[type=submit].btn-main.disabled:active,
+input[type=submit].btn-main.disabled:hover,
+input[type=submit].btn-main:disabled:active,
+input[type=submit].btn-main:disabled:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color)
+}
+
+.button.btn-sub,
+.file-label.btn-sub,
+.ui-button.btn-sub,
+button.btn-sub,
+input[type=button].btn-sub,
+input[type=reset].btn-sub,
+input[type=submit].btn-sub {
+    background-color: #475966;
+    border-color: #475966
+}
+
+.button.btn-sub:active,
+.button.btn-sub:hover,
+.file-label.btn-sub:active,
+.file-label.btn-sub:hover,
+.ui-button.btn-sub:active,
+.ui-button.btn-sub:hover,
+button.btn-sub:active,
+button.btn-sub:hover,
+input[type=button].btn-sub:active,
+input[type=button].btn-sub:hover,
+input[type=reset].btn-sub:active,
+input[type=reset].btn-sub:hover,
+input[type=submit].btn-sub:active,
+input[type=submit].btn-sub:hover {
+    background-color: var(--thr-color);
+    border-color: var(--thr-color)
+}
+
+.button.btn-sub.disabled:active,
+.button.btn-sub.disabled:hover,
+.button.btn-sub:disabled:active,
+.button.btn-sub:disabled:hover,
+.file-label.btn-sub.disabled:active,
+.file-label.btn-sub.disabled:hover,
+.file-label.btn-sub:disabled:active,
+.file-label.btn-sub:disabled:hover,
+.ui-button.btn-sub.disabled:active,
+.ui-button.btn-sub.disabled:hover,
+.ui-button.btn-sub:disabled:active,
+.ui-button.btn-sub:disabled:hover,
+button.btn-sub.disabled:active,
+button.btn-sub.disabled:hover,
+button.btn-sub:disabled:active,
+button.btn-sub:disabled:hover,
+input[type=button].btn-sub.disabled:active,
+input[type=button].btn-sub.disabled:hover,
+input[type=button].btn-sub:disabled:active,
+input[type=button].btn-sub:disabled:hover,
+input[type=reset].btn-sub.disabled:active,
+input[type=reset].btn-sub.disabled:hover,
+input[type=reset].btn-sub:disabled:active,
+input[type=reset].btn-sub:disabled:hover,
+input[type=submit].btn-sub.disabled:active,
+input[type=submit].btn-sub.disabled:hover,
+input[type=submit].btn-sub:disabled:active,
+input[type=submit].btn-sub:disabled:hover {
+    background-color: #475966;
+    border-color: #475966
+}
+
+.button.btn-del,
+.file-label.btn-del,
+.ui-button.btn-del,
+button.btn-del,
+input[type=button].btn-del,
+input[type=reset].btn-del,
+input[type=submit].btn-del {
+    background-color: #ffe5ea;
+    border-color: #f2798d;
+    color: #601
+}
+
+.button.btn-del:active,
+.button.btn-del:hover,
+.file-label.btn-del:active,
+.file-label.btn-del:hover,
+.ui-button.btn-del:active,
+.ui-button.btn-del:hover,
+button.btn-del:active,
+button.btn-del:hover,
+input[type=button].btn-del:active,
+input[type=button].btn-del:hover,
+input[type=reset].btn-del:active,
+input[type=reset].btn-del:hover,
+input[type=submit].btn-del:active,
+input[type=submit].btn-del:hover {
+    background-color: #ffccd4
+}
+
+.button.btn-del.disabled:active,
+.button.btn-del.disabled:hover,
+.button.btn-del:disabled:active,
+.button.btn-del:disabled:hover,
+.file-label.btn-del.disabled:active,
+.file-label.btn-del.disabled:hover,
+.file-label.btn-del:disabled:active,
+.file-label.btn-del:disabled:hover,
+.ui-button.btn-del.disabled:active,
+.ui-button.btn-del.disabled:hover,
+.ui-button.btn-del:disabled:active,
+.ui-button.btn-del:disabled:hover,
+button.btn-del.disabled:active,
+button.btn-del.disabled:hover,
+button.btn-del:disabled:active,
+button.btn-del:disabled:hover,
+input[type=button].btn-del.disabled:active,
+input[type=button].btn-del.disabled:hover,
+input[type=button].btn-del:disabled:active,
+input[type=button].btn-del:disabled:hover,
+input[type=reset].btn-del.disabled:active,
+input[type=reset].btn-del.disabled:hover,
+input[type=reset].btn-del:disabled:active,
+input[type=reset].btn-del:disabled:hover,
+input[type=submit].btn-del.disabled:active,
+input[type=submit].btn-del.disabled:hover,
+input[type=submit].btn-del:disabled:active,
+input[type=submit].btn-del:disabled:hover {
+    background-color: #ffe5ea;
+    border-color: #f2798d
+}
+
+.button.btn-footer,
+.file-label.btn-footer,
+.ui-button.btn-footer,
+button.btn-footer,
+input[type=button].btn-footer,
+input[type=reset].btn-footer,
+input[type=submit].btn-footer {
+    border-color: var(--main-color)
+}
+
+.button.btn-manual,
+.file-label.btn-manual,
+.ui-button.btn-manual,
+button.btn-manual,
+input[type=button].btn-manual,
+input[type=reset].btn-manual,
+input[type=submit].btn-manual {
+    border-color: var(--main-color)
+}
+
+.button.btn-search,
+.file-label.btn-search,
+.ui-button.btn-search,
+button.btn-search,
+input[type=button].btn-search,
+input[type=reset].btn-search,
+input[type=submit].btn-search {
+    background-color: #ff8430;
+    border-color: #d97029
+}
+
+.button.btn-search:active,
+.button.btn-search:hover,
+.file-label.btn-search:active,
+.file-label.btn-search:hover,
+.ui-button.btn-search:active,
+.ui-button.btn-search:hover,
+button.btn-search:active,
+button.btn-search:hover,
+input[type=button].btn-search:active,
+input[type=button].btn-search:hover,
+input[type=reset].btn-search:active,
+input[type=reset].btn-search:hover,
+input[type=submit].btn-search:active,
+input[type=submit].btn-search:hover {
+    background-color: #73be00;
+    border-color: #64a304
+}
+
+.container .header .layer-user {
+    border-color: #475966
+}
+
+.container .header .layer-user::before {
+    border-bottom-color: #475966
+}
+
+.nav-menu li:hover i {
+    background-color: var(--main-color)
+}
+
+.nav-menu li:hover span {
+    color: #000
+}
+
+.nav-menu li.is-active span {
+    color: #000
+}
+
+.nav-menu li.is-active i {
+    background-color: var(--main-color)
+}
+
+.popup header {
+    background: #475966
+}
+
+.sw-tabs {
+    border-color: var(--thr-color)
+}
+
+.sw-tabs>li.is-active {
+    border-color: var(--thr-color);
+    background: var(--thr-color)
+}
+
+table.tbl-detail {
+    border-color: var(--main-color)
+}
+
+.ui-jqgrid.ui-widget-content {
+    border-top-color: var(--main-color)
+}

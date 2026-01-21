@@ -1,0 +1,3056 @@
+@charset "UTF-8";
+
+:root {
+    --main-color: #2d8451;
+    --sub-color: #dcd620;
+    --thr-color: #72be42
+}
+
+.txt-red {
+    color: #f2182e !important
+}
+
+.txt-yellow {
+    color: #fabb00 !important
+}
+
+.txt-org {
+    color: #f76700 !important
+}
+
+.txt-blue {
+    color: #0080bf !important
+}
+
+.txt-green {
+    color: #2a7f24 !important
+}
+
+.txt-white {
+    color: #fff !important
+}
+
+.txt-black {
+    color: #000 !important
+}
+
+.txt-main {
+    color: var(--main-color) !important
+}
+
+.txt-bold {
+    font-weight: 700
+}
+
+.bg-red {
+    background-color: #f2182e !important
+}
+
+.bg-yellow {
+    background-color: #fabb00 !important
+}
+
+.bg-blue {
+    background-color: #0080bf !important
+}
+
+.bg-green {
+    background-color: #2a7f24 !important
+}
+
+.bg-white {
+    background-color: #fff !important
+}
+
+.bg-black {
+    background-color: #000 !important
+}
+
+.m-0 {
+    margin: 0 !important
+}
+
+.mt-0 {
+    margin-top: 0 !important
+}
+
+.mr-0 {
+    margin-right: 0 !important
+}
+
+.mb-0 {
+    margin-bottom: 0 !important
+}
+
+.ml-0 {
+    margin-left: 0 !important
+}
+
+.m-5 {
+    margin: 5px !important
+}
+
+.mt-5 {
+    margin-top: 5px !important
+}
+
+.mr-5 {
+    margin-right: 5px !important
+}
+
+.mb-5 {
+    margin-bottom: 5px !important
+}
+
+.ml-5 {
+    margin-left: 5px !important
+}
+
+.m-10 {
+    margin: 10px !important
+}
+
+.mt-10 {
+    margin-top: 10px !important
+}
+
+.mr-10 {
+    margin-right: 10px !important
+}
+
+.mb-10 {
+    margin-bottom: 10px !important
+}
+
+.ml-10 {
+    margin-left: 10px !important
+}
+
+.m-15 {
+    margin: 15px !important
+}
+
+.mt-15 {
+    margin-top: 15px !important
+}
+
+.mr-15 {
+    margin-right: 15px !important
+}
+
+.mb-15 {
+    margin-bottom: 15px !important
+}
+
+.ml-15 {
+    margin-left: 15px !important
+}
+
+.m-20 {
+    margin: 20px !important
+}
+
+.mt-20 {
+    margin-top: 20px !important
+}
+
+.mr-20 {
+    margin-right: 20px !important
+}
+
+.mb-20 {
+    margin-bottom: 20px !important
+}
+
+.ml-20 {
+    margin-left: 20px !important
+}
+
+.m-25 {
+    margin: 25px !important
+}
+
+.mt-25 {
+    margin-top: 25px !important
+}
+
+.mr-25 {
+    margin-right: 25px !important
+}
+
+.mb-25 {
+    margin-bottom: 25px !important
+}
+
+.ml-25 {
+    margin-left: 25px !important
+}
+
+.m-30 {
+    margin: 30px !important
+}
+
+.mt-30 {
+    margin-top: 30px !important
+}
+
+.mr-30 {
+    margin-right: 30px !important
+}
+
+.mb-30 {
+    margin-bottom: 30px !important
+}
+
+.ml-30 {
+    margin-left: 30px !important
+}
+
+.m-40 {
+    margin: 40px !important
+}
+
+.mt-40 {
+    margin-top: 40px !important
+}
+
+.mr-40 {
+    margin-right: 40px !important
+}
+
+.mb-40 {
+    margin-bottom: 40px !important
+}
+
+.ml-40 {
+    margin-left: 40px !important
+}
+
+.m-50 {
+    margin: 50px !important
+}
+
+.mt-50 {
+    margin-top: 50px !important
+}
+
+.mr-50 {
+    margin-right: 50px !important
+}
+
+.mb-50 {
+    margin-bottom: 50px !important
+}
+
+.ml-50 {
+    margin-left: 50px !important
+}
+
+.m-60 {
+    margin: 60px !important
+}
+
+.mt-60 {
+    margin-top: 60px !important
+}
+
+.mr-60 {
+    margin-right: 60px !important
+}
+
+.mb-60 {
+    margin-bottom: 60px !important
+}
+
+.ml-60 {
+    margin-left: 60px !important
+}
+
+.p-0 {
+    padding: 0 !important
+}
+
+.pt-0 {
+    padding-top: 0 !important
+}
+
+.pr-0 {
+    padding-right: 0 !important
+}
+
+.pb-0 {
+    padding-bottom: 0 !important
+}
+
+.pl-0 {
+    padding-left: 0 !important
+}
+
+.p-5 {
+    padding: 5px !important
+}
+
+.pt-5 {
+    padding-top: 5px !important
+}
+
+.pr-5 {
+    padding-right: 5px !important
+}
+
+.pb-5 {
+    padding-bottom: 5px !important
+}
+
+.pl-5 {
+    padding-left: 5px !important
+}
+
+.p-10 {
+    padding: 10px !important
+}
+
+.pt-10 {
+    padding-top: 10px !important
+}
+
+.pr-10 {
+    padding-right: 10px !important
+}
+
+.pb-10 {
+    padding-bottom: 10px !important
+}
+
+.pl-10 {
+    padding-left: 10px !important
+}
+
+.p-15 {
+    padding: 15px !important
+}
+
+.pt-15 {
+    padding-top: 15px !important
+}
+
+.pr-15 {
+    padding-right: 15px !important
+}
+
+.pb-15 {
+    padding-bottom: 15px !important
+}
+
+.pl-15 {
+    padding-left: 15px !important
+}
+
+.p-20 {
+    padding: 20px !important
+}
+
+.pt-20 {
+    padding-top: 20px !important
+}
+
+.pr-20 {
+    padding-right: 20px !important
+}
+
+.pb-20 {
+    padding-bottom: 20px !important
+}
+
+.pl-20 {
+    padding-left: 20px !important
+}
+
+.p-25 {
+    padding: 25px !important
+}
+
+.pt-25 {
+    padding-top: 25px !important
+}
+
+.pr-25 {
+    padding-right: 25px !important
+}
+
+.pb-25 {
+    padding-bottom: 25px !important
+}
+
+.pl-25 {
+    padding-left: 25px !important
+}
+
+.p-30 {
+    padding: 30px !important
+}
+
+.pt-30 {
+    padding-top: 30px !important
+}
+
+.pr-30 {
+    padding-right: 30px !important
+}
+
+.pb-30 {
+    padding-bottom: 30px !important
+}
+
+.pl-30 {
+    padding-left: 30px !important
+}
+
+.p-40 {
+    padding: 40px !important
+}
+
+.pt-40 {
+    padding-top: 40px !important
+}
+
+.pr-40 {
+    padding-right: 40px !important
+}
+
+.pb-40 {
+    padding-bottom: 40px !important
+}
+
+.pl-40 {
+    padding-left: 40px !important
+}
+
+.p-50 {
+    padding: 50px !important
+}
+
+.pt-50 {
+    padding-top: 50px !important
+}
+
+.pr-50 {
+    padding-right: 50px !important
+}
+
+.pb-50 {
+    padding-bottom: 50px !important
+}
+
+.pl-50 {
+    padding-left: 50px !important
+}
+
+.p-60 {
+    padding: 60px !important
+}
+
+.pt-60 {
+    padding-top: 60px !important
+}
+
+.pr-60 {
+    padding-right: 60px !important
+}
+
+.pb-60 {
+    padding-bottom: 60px !important
+}
+
+.pl-60 {
+    padding-left: 60px !important
+}
+
+.alignL {
+    text-align: left !important
+}
+
+.alignC {
+    text-align: center !important
+}
+
+.alignR {
+    text-align: right !important
+}
+
+.align-top {
+    vertical-align: top !important
+}
+
+.align-middle {
+    vertical-align: middle !important
+}
+
+.align-bottom {
+    vertical-align: bottom !important
+}
+
+.float-left {
+    float: left
+}
+
+.float-right {
+    float: right
+}
+
+.float-none {
+    float: none
+}
+
+.w-100 {
+    width: 100% !important
+}
+
+.w-auto {
+    width: auto !important
+}
+
+.h-100 {
+    height: 100% !important
+}
+
+.h-auto {
+    height: auto !important
+}
+
+.hidden,
+.hide {
+    display: none
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=file],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {
+    width: 100%;
+    height: 25px;
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -.5px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-sizing: border-box;
+    padding: 0 5px 2px;
+    border-radius: 2px
+}
+
+input[type=color]::-ms-expand,
+input[type=date]::-ms-expand,
+input[type=datetime-local]::-ms-expand,
+input[type=datetime]::-ms-expand,
+input[type=email]::-ms-expand,
+input[type=file]::-ms-expand,
+input[type=month]::-ms-expand,
+input[type=number]::-ms-expand,
+input[type=password]::-ms-expand,
+input[type=search]::-ms-expand,
+input[type=tel]::-ms-expand,
+input[type=text]::-ms-expand,
+input[type=time]::-ms-expand,
+input[type=url]::-ms-expand,
+input[type=week]::-ms-expand {
+    display: none
+}
+
+input[type=color]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=file]:focus:not([readonly]),
+input[type=month]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=week]:focus:not([readonly]) {
+    transition: all ease-in-out .2s;
+    border-color: #475966
+}
+
+input[type=color].transparent,
+input[type=date].transparent,
+input[type=datetime-local].transparent,
+input[type=datetime].transparent,
+input[type=email].transparent,
+input[type=file].transparent,
+input[type=month].transparent,
+input[type=number].transparent,
+input[type=password].transparent,
+input[type=search].transparent,
+input[type=tel].transparent,
+input[type=text].transparent,
+input[type=time].transparent,
+input[type=url].transparent,
+input[type=week].transparent {
+    background: 0 0;
+    border: 0
+}
+
+input[readonly=readonly],
+input[readonly] {
+    background-color: #f7f7f7;
+    border-color: #ccc;
+    color: #666;
+    cursor: default;
+    pointer-events: none
+}
+
+input[readonly=readonly].transparent,
+input[readonly].transparent {
+    background: 0 0;
+    border: 0
+}
+
+input[disabled=disabled],
+input[disabled] {
+    background-color: #f7f7f7 !important;
+    border-color: #ccc;
+    color: #666;
+    cursor: default !important
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    display: none
+}
+
+::-webkit-input-placeholder {
+    color: #aaa
+}
+
+:-moz-placeholder {
+    color: #aaa;
+    opacity: 1
+}
+
+::-moz-placeholder {
+    color: #aaa;
+    opacity: 1
+}
+
+:-ms-input-placeholder {
+    color: #aaa;
+    opacity: 1
+}
+
+select {
+    width: 100%;
+    height: 25px;
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -.5px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-sizing: border-box;
+    padding: 0 20px 0 5px;
+    background-image: url(../../static/img/contents/bg-select.png);
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%
+}
+
+select::-ms-expand {
+    display: none
+}
+
+select:focus:not([readonly]) {
+    transition: all ease-in-out .2s;
+    border-color: #475966
+}
+
+@-moz-document url-prefix() {
+    select {
+        padding-left: 5px
+    }
+}
+
+select:disabled {
+    background-color: #f7f7f7 !important;
+    border-color: #ccc;
+    color: #666;
+    cursor: default !important
+}
+
+select:focus {
+    outline: 0 none
+}
+
+select option {
+    padding-left: 5px
+}
+
+input[type=checkbox],
+input[type=radio] {
+    width: 16px;
+    height: 16px;
+    background: 0 0;
+    vertical-align: text-top;
+    display: none
+}
+
+input[type=checkbox]:first-of-type,
+input[type=radio]:first-of-type {
+    margin-left: 0
+}
+
+br+input[type=checkbox],
+br+input[type=radio] {
+    margin-left: 0
+}
+
+input[type=checkbox]+label,
+input[type=radio]+label {
+    display: inline-block;
+    position: relative;
+    height: 16px;
+    margin: 2px 0;
+    padding: 0 10px 0 20px;
+    line-height: 16px;
+    transition: all .2s
+}
+
+input[type=checkbox]+label:last-of-type,
+input[type=radio]+label:last-of-type {
+    padding-right: 0
+}
+
+input[type=checkbox]+label:before,
+input[type=radio]+label:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    transition: all .2s
+}
+
+input[type=checkbox]+label:hover:before,
+input[type=radio]+label:hover:before {
+    border-color: #ccc
+}
+
+input[type=checkbox]:checked+label:after,
+input[type=radio]:checked+label:after {
+    content: ""
+}
+
+input[type=checkbox]:disabled+label:before,
+input[type=radio]:disabled+label:before {
+    background: #f7f7f7;
+    border-color: #ccc
+}
+
+input[type=radio]+label:before {
+    content: "";
+    border-radius: 10px
+}
+
+input[type=radio]:checked+label:before {
+    border-color: var(--main-color)
+}
+
+input[type=radio]:checked+label:after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 1rem;
+    background: var(--main-color);
+    transition: all .2s
+}
+
+input[type=radio]:checked:disabled+label:before {
+    background: #f7f7f7;
+    border-color: #ccc
+}
+
+input[type=radio]:checked:disabled+label:after {
+    background: #ccc
+}
+
+input[type=checkbox]:checked+label:before {
+    background: #fff;
+    border-color: var(--main-color)
+}
+
+input[type=checkbox]:checked+label:after {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 6px;
+    height: 9px;
+    border-bottom: 2px solid var(--main-color);
+    border-right: 2px solid var(--main-color);
+    transform: rotate(45deg);
+    transition: all .2s
+}
+
+input[type=checkbox]:checked:disabled+label:before {
+    background: #f7f7f7;
+    border-color: #ccc
+}
+
+input[type=checkbox]:checked:disabled+label:after {
+    border-color: #ccc
+}
+
+br+input[type=checkbox]+label,
+br+input[type=radio]+label {
+    margin-top: 10px
+}
+
+.ui-state-highlight input+label {
+    color: #fff
+}
+
+textarea {
+    width: 100%;
+    height: 25px;
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -.5px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    padding: 8px 8px 3px 8px;
+    line-height: 1.4;
+    resize: none
+}
+
+textarea::-ms-expand {
+    display: none
+}
+
+textarea:focus:not([readonly]) {
+    transition: all ease-in-out .2s;
+    border-color: #475966
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    textarea {
+        margin-bottom: -4px
+    }
+}
+
+_:-ms-lang(x),
+_:-webkit-full-screen,
+textarea {
+    margin-bottom: 0
+}
+
+.form-group {
+    display: flex;
+    align-items: center
+}
+
+.form-group>label {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: 600
+}
+
+.radio-group {
+    display: inline-block
+}
+
+.radio-group input[type=radio]:disabled+input+label,
+.radio-group input[type=radio]:disabled+label {
+    opacity: .5;
+    cursor: default
+}
+
+.radio-group input[type=radio]:disabled+input+label:hover,
+.radio-group input[type=radio]:disabled+label:hover {
+    background-color: #f9f9f9
+}
+
+.radio-group input[type=radio]:checked+input+label,
+.radio-group input[type=radio]:checked+label {
+    z-index: 1;
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: default
+}
+
+.radio-group input[type=radio]:checked+input+label:hover,
+.radio-group input[type=radio]:checked+label:hover {
+    background-color: var(--sub-color);
+    border-color: var(--sub-color);
+    color: #fff
+}
+
+.radio-group input[type=radio]:checked:disabled+input+label,
+.radio-group input[type=radio]:checked:disabled+label {
+    opacity: .5;
+    cursor: default
+}
+
+.radio-group input[type=radio]:checked:disabled+input+label:hover,
+.radio-group input[type=radio]:checked:disabled+label:hover {
+    background-color: #222
+}
+
+.radio-group input[type=radio]+label {
+    float: left;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    touch-action: manipulation;
+    cursor: pointer;
+    selector-dummy: expression(this.hideFocus=true);
+    overflow: hidden;
+    height: 25px;
+    margin-left: -1px;
+    padding: 0 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+    background-image: none;
+    background-color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0;
+    word-spacing: -1px;
+    color: #444;
+    transition: all .3s;
+    outline: 0;
+    box-sizing: border-box
+}
+
+.radio-group input[type=radio]+label:after,
+.radio-group input[type=radio]+label:before {
+    display: none
+}
+
+.radio-group input[type=radio]+label:hover {
+    background-color: #f2f2f2;
+    color: #000
+}
+
+.radio-group input[type=radio]+label:first-of-type {
+    margin-left: 0;
+    border-radius: 13px 0 0 13px
+}
+
+.radio-group input[type=radio]+label:last-of-type {
+    border-width: 1px;
+    border-radius: 0 13px 13px 0
+}
+
+.button,
+.file-label,
+.ui-button,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    position: relative;
+    border-radius: 2px;
+    border: 1px solid;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-align: center;
+    white-space: nowrap;
+    touch-action: manipulation;
+    outline: 0;
+    cursor: pointer;
+    selector-dummy: expression(this.hideFocus=true);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 55px;
+    height: 25px;
+    padding: 0 8px 1px;
+    font-size: 12px;
+    letter-spacing: -.5px;
+    word-spacing: -1px;
+    background-image: none;
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    color: #333
+}
+
+.button:hover,
+.file-label:hover,
+.ui-button:hover,
+button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+    transition: border-color .2s, background-color .2s, color .2s
+}
+
+.button small,
+.file-label small,
+.ui-button small,
+button small,
+input[type=button] small,
+input[type=reset] small,
+input[type=submit] small {
+    margin-left: 2px;
+    color: inherit;
+    letter-spacing: 0
+}
+
+.button.btn-sm,
+.file-label.btn-sm,
+.ui-button.btn-sm,
+button.btn-sm,
+input[type=button].btn-sm,
+input[type=reset].btn-sm,
+input[type=submit].btn-sm {
+    min-width: 40px;
+    height: 21px;
+    padding: 0 6px 2px;
+    font-size: 12px
+}
+
+.button.btn-md,
+.file-label.btn-md,
+.ui-button.btn-md,
+button.btn-md,
+input[type=button].btn-md,
+input[type=reset].btn-md,
+input[type=submit].btn-md {
+    min-width: 70px;
+    height: 30px;
+    padding: 0 10px 1px;
+    word-spacing: -1px
+}
+
+.button:active,
+.button:hover,
+.file-label:active,
+.file-label:hover,
+.ui-button:active,
+.ui-button:hover,
+button:active,
+button:hover,
+input[type=button]:active,
+input[type=button]:hover,
+input[type=reset]:active,
+input[type=reset]:hover,
+input[type=submit]:active,
+input[type=submit]:hover {
+    border-color: #b3b3b3;
+    color: #000;
+    outline: 0 none
+}
+
+.button.disabled,
+.button:disabled,
+.file-label.disabled,
+.file-label:disabled,
+.ui-button.disabled,
+.ui-button:disabled,
+button.disabled,
+button:disabled,
+input[type=button].disabled,
+input[type=button]:disabled,
+input[type=reset].disabled,
+input[type=reset]:disabled,
+input[type=submit].disabled,
+input[type=submit]:disabled {
+    opacity: .3;
+    cursor: default
+}
+
+.button.disabled:active,
+.button.disabled:hover,
+.button:disabled:active,
+.button:disabled:hover,
+.file-label.disabled:active,
+.file-label.disabled:hover,
+.file-label:disabled:active,
+.file-label:disabled:hover,
+.ui-button.disabled:active,
+.ui-button.disabled:hover,
+.ui-button:disabled:active,
+.ui-button:disabled:hover,
+button.disabled:active,
+button.disabled:hover,
+button:disabled:active,
+button:disabled:hover,
+input[type=button].disabled:active,
+input[type=button].disabled:hover,
+input[type=button]:disabled:active,
+input[type=button]:disabled:hover,
+input[type=reset].disabled:active,
+input[type=reset].disabled:hover,
+input[type=reset]:disabled:active,
+input[type=reset]:disabled:hover,
+input[type=submit].disabled:active,
+input[type=submit].disabled:hover,
+input[type=submit]:disabled:active,
+input[type=submit]:disabled:hover {
+    border-color: #ccc;
+    color: #333
+}
+
+.button.btn-icon,
+.file-label.btn-icon,
+.ui-button.btn-icon,
+button.btn-icon,
+input[type=button].btn-icon,
+input[type=reset].btn-icon,
+input[type=submit].btn-icon {
+    min-width: auto;
+    padding: 0;
+    background-color: transparent;
+    border: 0
+}
+
+.button.btn-main,
+.button.btn-sub,
+.file-label.btn-main,
+.file-label.btn-sub,
+.ui-button.btn-main,
+.ui-button.btn-sub,
+button.btn-main,
+button.btn-sub,
+input[type=button].btn-main,
+input[type=button].btn-sub,
+input[type=reset].btn-main,
+input[type=reset].btn-sub,
+input[type=submit].btn-main,
+input[type=submit].btn-sub {
+    color: #fff
+}
+
+.button.btn-main:active,
+.button.btn-main:hover,
+.button.btn-sub:active,
+.button.btn-sub:hover,
+.file-label.btn-main:active,
+.file-label.btn-main:hover,
+.file-label.btn-sub:active,
+.file-label.btn-sub:hover,
+.ui-button.btn-main:active,
+.ui-button.btn-main:hover,
+.ui-button.btn-sub:active,
+.ui-button.btn-sub:hover,
+button.btn-main:active,
+button.btn-main:hover,
+button.btn-sub:active,
+button.btn-sub:hover,
+input[type=button].btn-main:active,
+input[type=button].btn-main:hover,
+input[type=button].btn-sub:active,
+input[type=button].btn-sub:hover,
+input[type=reset].btn-main:active,
+input[type=reset].btn-main:hover,
+input[type=reset].btn-sub:active,
+input[type=reset].btn-sub:hover,
+input[type=submit].btn-main:active,
+input[type=submit].btn-main:hover,
+input[type=submit].btn-sub:active,
+input[type=submit].btn-sub:hover {
+    color: #fff
+}
+
+.button.btn-main.disabled:active,
+.button.btn-main.disabled:hover,
+.button.btn-main:disabled:active,
+.button.btn-main:disabled:hover,
+.button.btn-sub.disabled:active,
+.button.btn-sub.disabled:hover,
+.button.btn-sub:disabled:active,
+.button.btn-sub:disabled:hover,
+.file-label.btn-main.disabled:active,
+.file-label.btn-main.disabled:hover,
+.file-label.btn-main:disabled:active,
+.file-label.btn-main:disabled:hover,
+.file-label.btn-sub.disabled:active,
+.file-label.btn-sub.disabled:hover,
+.file-label.btn-sub:disabled:active,
+.file-label.btn-sub:disabled:hover,
+.ui-button.btn-main.disabled:active,
+.ui-button.btn-main.disabled:hover,
+.ui-button.btn-main:disabled:active,
+.ui-button.btn-main:disabled:hover,
+.ui-button.btn-sub.disabled:active,
+.ui-button.btn-sub.disabled:hover,
+.ui-button.btn-sub:disabled:active,
+.ui-button.btn-sub:disabled:hover,
+button.btn-main.disabled:active,
+button.btn-main.disabled:hover,
+button.btn-main:disabled:active,
+button.btn-main:disabled:hover,
+button.btn-sub.disabled:active,
+button.btn-sub.disabled:hover,
+button.btn-sub:disabled:active,
+button.btn-sub:disabled:hover,
+input[type=button].btn-main.disabled:active,
+input[type=button].btn-main.disabled:hover,
+input[type=button].btn-main:disabled:active,
+input[type=button].btn-main:disabled:hover,
+input[type=button].btn-sub.disabled:active,
+input[type=button].btn-sub.disabled:hover,
+input[type=button].btn-sub:disabled:active,
+input[type=button].btn-sub:disabled:hover,
+input[type=reset].btn-main.disabled:active,
+input[type=reset].btn-main.disabled:hover,
+input[type=reset].btn-main:disabled:active,
+input[type=reset].btn-main:disabled:hover,
+input[type=reset].btn-sub.disabled:active,
+input[type=reset].btn-sub.disabled:hover,
+input[type=reset].btn-sub:disabled:active,
+input[type=reset].btn-sub:disabled:hover,
+input[type=submit].btn-main.disabled:active,
+input[type=submit].btn-main.disabled:hover,
+input[type=submit].btn-main:disabled:active,
+input[type=submit].btn-main:disabled:hover,
+input[type=submit].btn-sub.disabled:active,
+input[type=submit].btn-sub.disabled:hover,
+input[type=submit].btn-sub:disabled:active,
+input[type=submit].btn-sub:disabled:hover {
+    color: #fff
+}
+
+.button.btn-footer,
+.file-label.btn-footer,
+.ui-button.btn-footer,
+button.btn-footer,
+input[type=button].btn-footer,
+input[type=reset].btn-footer,
+input[type=submit].btn-footer {
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 40px;
+    margin-left: 5px;
+    padding: 0 15px 0 15px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px solid;
+    background-color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333
+}
+
+.button.btn-footer:active,
+.button.btn-footer:hover,
+.file-label.btn-footer:active,
+.file-label.btn-footer:hover,
+.ui-button.btn-footer:active,
+.ui-button.btn-footer:hover,
+button.btn-footer:active,
+button.btn-footer:hover,
+input[type=button].btn-footer:active,
+input[type=button].btn-footer:hover,
+input[type=reset].btn-footer:active,
+input[type=reset].btn-footer:hover,
+input[type=submit].btn-footer:active,
+input[type=submit].btn-footer:hover {
+    color: #111
+}
+
+.button.btn-footer.btn-main,
+.file-label.btn-footer.btn-main,
+.ui-button.btn-footer.btn-main,
+button.btn-footer.btn-main,
+input[type=button].btn-footer.btn-main,
+input[type=reset].btn-footer.btn-main,
+input[type=submit].btn-footer.btn-main {
+    color: #fff
+}
+
+.button.btn-footer.btn-main:active,
+.button.btn-footer.btn-main:hover,
+.file-label.btn-footer.btn-main:active,
+.file-label.btn-footer.btn-main:hover,
+.ui-button.btn-footer.btn-main:active,
+.ui-button.btn-footer.btn-main:hover,
+button.btn-footer.btn-main:active,
+button.btn-footer.btn-main:hover,
+input[type=button].btn-footer.btn-main:active,
+input[type=button].btn-footer.btn-main:hover,
+input[type=reset].btn-footer.btn-main:active,
+input[type=reset].btn-footer.btn-main:hover,
+input[type=submit].btn-footer.btn-main:active,
+input[type=submit].btn-footer.btn-main:hover {
+    color: #fff
+}
+
+.button.btn-footer i,
+.file-label.btn-footer i,
+.ui-button.btn-footer i,
+button.btn-footer i,
+input[type=button].btn-footer i,
+input[type=reset].btn-footer i,
+input[type=submit].btn-footer i {
+    margin: 0 8px 0 0
+}
+
+.button.btn-footer i.sw-icon-download,
+.file-label.btn-footer i.sw-icon-download,
+.ui-button.btn-footer i.sw-icon-download,
+button.btn-footer i.sw-icon-download,
+input[type=button].btn-footer i.sw-icon-download,
+input[type=reset].btn-footer i.sw-icon-download,
+input[type=submit].btn-footer i.sw-icon-download {
+    margin: 0 0 0 7px !important
+}
+
+.button.btn-manual,
+.file-label.btn-manual,
+.ui-button.btn-manual,
+button.btn-manual,
+input[type=button].btn-manual,
+input[type=reset].btn-manual,
+input[type=submit].btn-manual {
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 40px;
+    margin-left: 5px;
+    padding: 0 15px 0 15px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px solid;
+    background-color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333
+}
+
+.button.btn-manual:active,
+.button.btn-manual:hover,
+.file-label.btn-manual:active,
+.file-label.btn-manual:hover,
+.ui-button.btn-manual:active,
+.ui-button.btn-manual:hover,
+button.btn-manual:active,
+button.btn-manual:hover,
+input[type=button].btn-manual:active,
+input[type=button].btn-manual:hover,
+input[type=reset].btn-manual:active,
+input[type=reset].btn-manual:hover,
+input[type=submit].btn-manual:active,
+input[type=submit].btn-manual:hover {
+    color: #111
+}
+
+.button.btn-manual i,
+.file-label.btn-manual i,
+.ui-button.btn-manual i,
+button.btn-manual i,
+input[type=button].btn-manual i,
+input[type=reset].btn-manual i,
+input[type=submit].btn-manual i {
+    margin: 0 8px 0 0
+}
+
+.button.transparent,
+.file-label.transparent,
+.ui-button.transparent,
+button.transparent,
+input[type=button].transparent,
+input[type=reset].transparent,
+input[type=submit].transparent {
+    background-color: transparent;
+    border-color: transparent;
+    color: #333
+}
+
+.button.transparent:hover,
+.file-label.transparent:hover,
+.ui-button.transparent:hover,
+button.transparent:hover,
+input[type=button].transparent:hover,
+input[type=reset].transparent:hover,
+input[type=submit].transparent:hover {
+    border-color: transparent;
+    color: #494a4d
+}
+
+.button.transparent:after,
+.file-label.transparent:after,
+.ui-button.transparent:after,
+button.transparent:after,
+input[type=button].transparent:after,
+input[type=reset].transparent:after,
+input[type=submit].transparent:after {
+    display: none
+}
+
+.button i,
+.file-label i,
+.ui-button i,
+button i,
+input[type=button] i,
+input[type=reset] i,
+input[type=submit] i {
+    display: inline-block;
+    width: 16px;
+    height: 100%;
+    margin: 0 3px -2px 0;
+    background: no-repeat 50% 50%
+}
+
+.button i.icon-refresh,
+.file-label i.icon-refresh,
+.ui-button i.icon-refresh,
+button i.icon-refresh,
+input[type=button] i.icon-refresh,
+input[type=reset] i.icon-refresh,
+input[type=submit] i.icon-refresh {
+    background-image: url(../../static/img/contents/icon-refresh.png);
+    background-position-y: 0
+}
+
+.button i.icon-schedule,
+.file-label i.icon-schedule,
+.ui-button i.icon-schedule,
+button i.icon-schedule,
+input[type=button] i.icon-schedule,
+input[type=reset] i.icon-schedule,
+input[type=submit] i.icon-schedule {
+    background-image: url(../../static/img/contents/icon-schedule.png)
+}
+
+.button i.icon-print,
+.file-label i.icon-print,
+.ui-button i.icon-print,
+button i.icon-print,
+input[type=button] i.icon-print,
+input[type=reset] i.icon-print,
+input[type=submit] i.icon-print {
+    background-image: url(../../static/img/contents/icon-print.png)
+}
+
+.button i.icon-download,
+.file-label i.icon-download,
+.ui-button i.icon-download,
+button i.icon-download,
+input[type=button] i.icon-download,
+input[type=reset] i.icon-download,
+input[type=submit] i.icon-download {
+    width: 13px;
+    background-image: url(../../static/img/contents/icon-download.png)
+}
+
+.button.btn-search,
+.file-label.btn-search,
+.ui-button.btn-search,
+button.btn-search,
+input[type=button].btn-search,
+input[type=reset].btn-search,
+input[type=submit].btn-search {
+    color: #fff;
+    background-image: url(../../static/img/contents/icon-search.png);
+    background-repeat: no-repeat;
+    background-position: 12px 8px;
+    padding-left: 32px
+}
+
+.button.btn-search:active,
+.button.btn-search:hover,
+.file-label.btn-search:active,
+.file-label.btn-search:hover,
+.ui-button.btn-search:active,
+.ui-button.btn-search:hover,
+button.btn-search:active,
+button.btn-search:hover,
+input[type=button].btn-search:active,
+input[type=button].btn-search:hover,
+input[type=reset].btn-search:active,
+input[type=reset].btn-search:hover,
+input[type=submit].btn-search:active,
+input[type=submit].btn-search:hover {
+    color: #fff
+}
+
+.btn-area {
+    padding: 15px 0;
+    text-align: center
+}
+
+@media print {
+    .btn-area {
+        display: none
+    }
+}
+
+@media print {
+    .print {
+        display: none
+    }
+}
+
+.wrap-loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+    background: rgba(73, 74, 77, .4);
+    transition: all 250ms linear
+}
+
+.wrap-loader.loader-visible {
+    opacity: 1;
+    z-index: 9999
+}
+
+.wrap-loader.loader-hidden {
+    opacity: 0;
+    z-index: -1
+}
+
+.wrap-loader .loader {
+    position: relative;
+    display: inline-block;
+    text-indent: -9999999em;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    margin-top: 5px;
+    border-top: 2px solid transparent;
+    border-right: 2px solid var(--main-color);
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid var(--main-color);
+    -webkit-animation: load 1s infinite linear;
+    animation: load 1s infinite linear
+}
+
+.wrap-loader .loading-text {
+    position: relative;
+    left: -65px;
+    top: -33px;
+    display: inline-block;
+    margin: 0 auto;
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--main-color);
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-animation: loading-text 1.5s linear 0s infinite normal;
+    animation: loading-text 1.5s linear 0s infinite normal
+}
+
+.wrap-loader .loading-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-top: 50px;
+    margin-left: 50px
+}
+
+body>.wrap-loader {
+    position: fixed
+}
+
+@-webkit-keyframes load {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes load {
+    0% {
+        transform: rotate(0)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes loading-text {
+    0% {
+        opacity: 0
+    }
+
+    20% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1;
+        color: var(--main-color)
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@keyframes loading-text {
+    0% {
+        opacity: 0
+    }
+
+    20% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1;
+        color: var(--main-color)
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.info-txt {
+    position: relative;
+    min-height: 16px;
+    margin-top: 5px;
+    padding-left: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    word-break: break-all;
+    word-spacing: -1px;
+    letter-spacing: -.2px;
+    color: #333;
+    box-sizing: border-box
+}
+
+.info-txt:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: url(../../static/img/contents/icon-info.png) no-repeat 0 0
+}
+
+.info-txt.is-blue {
+    background-color: transparent;
+    color: #006fa6
+}
+
+.info-txt.is-red {
+    background-color: transparent
+}
+
+.info-txt.is-red:before {
+    background-position: 0 -40px
+}
+
+.info-txt:first-child {
+    margin-top: 0
+}
+
+.info-txt+div,
+.info-txt+table,
+.info-txt+ul {
+    margin-top: 10px
+}
+
+.info-txt+.tt-info-group {
+    margin-top: 5px
+}
+
+.info-txt+div.tt-btn-area {
+    margin-top: 20px
+}
+
+.info-box {
+    position: relative;
+    padding: 16px 20px;
+    border-radius: 6px;
+    border: 1px solid #dedede;
+    background: #fff;
+    box-sizing: border-box
+}
+
+.info-box.no-border {
+    padding: 15px 20px;
+    border: 0;
+    background: #f5f5f5
+}
+
+.info-box.no-border .list-icon li,
+.info-box.no-border .list-num li {
+    margin-bottom: 5px;
+    background-position-y: 6px
+}
+
+.info-box.no-border .list-icon li:last-child,
+.info-box.no-border .list-num li:last-child {
+    margin-bottom: 0
+}
+
+.info-box+* {
+    margin-top: 10px
+}
+
+.list-icon>li {
+    margin-bottom: 10px;
+    padding: 0 0 0 12px;
+    background: url(../img/contents/bullet.png) no-repeat 0 7px;
+    font-size: 13px;
+    line-height: 22px;
+    box-sizing: border-box
+}
+
+.list-icon>li:last-child {
+    margin-bottom: 0
+}
+
+.list-icon>li .list-dot {
+    margin-top: 2px
+}
+
+.list-num {
+    margin-left: 20px;
+    list-style-type: decimal
+}
+
+.list-num>li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+    word-break: break-all
+}
+
+.list-num>li:last-child {
+    margin-bottom: 0
+}
+
+.list-num>li .list-dot {
+    margin-top: 2px
+}
+
+.list-dot li {
+    position: relative;
+    padding: 3px 0 3px 10px;
+    font-size: 12px;
+    line-height: 18px;
+    word-break: keep-all;
+    word-break: break-word
+}
+
+.list-dot li:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    background: #7a8999
+}
+
+.list-dot li p {
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box
+}
+
+i[class^=sw-icon] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+i[class^=sw-icon].hidden {
+    display: none
+}
+
+i.sw-icon-check {
+    background-image: url(../img/contents/icon-check.png)
+}
+
+i.sw-icon-view {
+    background-image: url(../img/contents/icon-view.png);
+    height: 21px
+}
+
+i.sw-icon-print {
+    background-image: url(../img/contents/icon-print.png)
+}
+
+i.sw-icon-doc {
+    background-image: url(../img/contents/icon-doc.png);
+    width: 12px
+}
+
+i.sw-icon-pc {
+    background-image: url(../img/icon-pc.png);
+    width: 21px;
+    height: 19px
+}
+
+i.sw-icon-mobile {
+    background-image: url(../img/icon-mobile.png);
+    width: 15px;
+    height: 20px
+}
+
+i.sw-icon-help {
+    background-image: url(../img/contents/icon-help.png);
+    width: 15px;
+    height: 15px
+}
+
+i.sw-icon-download {
+    background-image: url(../img/contents/icon-download.png);
+    width: 13px;
+    height: 14px
+}
+
+i.sw-icon-search {
+    background-image: url(../img/contents/icon-search.png);
+    width: 12px;
+    height: 12px
+}
+
+i.sw-icon-date {
+    background-image: url(../img/contents/icon-date.png);
+    width: 15px;
+    height: 14px
+}
+
+i.sw-icon-close {
+    background-image: url(../img/contents/icon-close.png);
+    width: 7px;
+    height: 7px
+}
+
+i.sw-icon-personal-info {
+    background-image: url(../img/icon-personal-info.png);
+    width: 20px;
+    height: 17px
+}
+
+i[class^=sw-alert] {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 15px
+}
+
+i[class^=sw-alert]:before {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+i[class^=sw-alert].hidden {
+    display: none
+}
+
+i.sw-alert-info:before {
+    border: 2px solid #f2182e;
+    background-image: url(../../static/img/contents/alert-info.png)
+}
+
+i.sw-alert-check:before {
+    background-color: #475966;
+    background-image: url(../../static/img/contents/alert-check.png)
+}
+
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "맑은 고딕", "Malgun Gothic", "애플 SD 산돌고딕 Neo", "Apple SD Gothic Neo", sans-serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    box-sizing: border-box;
+    outline: 0 none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+html {
+    height: 100%
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    color: #1a79ff;
+    text-decoration: underline;
+    outline: 0 none
+}
+
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+body.login {
+    min-width: 1420px;
+    min-height: 850px;
+    height: 100%;
+    margin: 0;
+    background: #fff url(../../static/img/login/bg-login.jpg) no-repeat top right
+}
+
+body.login>.login-container {
+    display: flex;
+    align-items: stretch;
+    min-height: 100%;
+    height: 100%;
+    box-sizing: border-box
+}
+
+body.login>.login-container>aside {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    background-color: var(--main-color)
+}
+
+body.login>.login-container>aside::after,
+body.login>.login-container>aside::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%
+}
+
+body.login>.login-container>aside::before {
+    bottom: 0;
+    height: 200px;
+    background-color: #70bf42
+}
+
+body.login>.login-container>aside::after {
+    bottom: 200px;
+    height: 130px;
+    background-color: #dcd620
+}
+
+body.login>.login-container>main {
+    width: 40%;
+    min-width: 680px;
+    height: 100%;
+    background-color: #fff;
+    box-sizing: border-box
+}
+
+body.login>.login-container>main .login-box {
+    padding: 200px 180px 70px;
+    box-sizing: border-box
+}
+
+body.login>.login-container>main .login-box .login-logo {
+    margin-bottom: 25px
+}
+
+body.login>.login-container>main .login-box .login-term {
+    display: inline-block;
+    height: 40px;
+    margin: 10px 0 10px;
+    padding: 0 20px 2px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 40px;
+    background: rgba(255, 255, 255, .6)
+}
+
+body.login>.login-container>main .login-box label {
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0 8px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+body.login>.login-container>main .login-box input {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 15px 2px
+}
+
+body.login>.login-container>main .login-box .btn-login {
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff
+}
+
+body.login>.login-container>main .login-box .btn-login:active,
+body.login>.login-container>main .login-box .btn-login:hover {
+    background-color: var(--sub-color);
+    border-color: var(--sub-color);
+    color: #fff
+}
+
+body.login>.login-container>main .login-box .btn-login.disabled:active,
+body.login>.login-container>main .login-box .btn-login.disabled:hover,
+body.login>.login-container>main .login-box .btn-login:disabled:active,
+body.login>.login-container>main .login-box .btn-login:disabled:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff
+}
+
+body.login>.login-container>main .login-box a {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    color: #333
+}
+
+body.login>.login-container>main .loign-info {
+    padding: 35px 20px 30px 50px;
+    box-sizing: border-box
+}
+
+body.login>.login-container .login-notice {
+    flex: 1 0 0px;
+    min-width: 680px;
+    max-width: 100%;
+    width: auto;
+    padding: 210px 120px 30px;
+    box-sizing: border-box;
+    background-color: #eeffe8
+}
+
+body.login>.login-container .login-notice h1 {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: left;
+    letter-spacing: 0
+}
+
+body.login>.login-container .login-notice h1:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    width: 5px;
+    height: 14px;
+    margin-right: 6px;
+    border-radius: 2px;
+    background: var(--main-color)
+}
+
+body.login>.login-container .login-notice .list-box {
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid var(--main-color);
+    background: #fff;
+    box-sizing: border-box
+}
+
+body.login>.login-container .login-notice .list-box .list-dot+.list-dot {
+    margin-top: 10px
+}
+
+.list-dot li {
+    padding: 6px 0 6px 10px
+}
+
+.list-dot li:before {
+    content: "";
+    top: 14px
+}
+
+/*!
+ * jquery-confirm v3.3.4 (http://craftpip.github.io/jquery-confirm/)
+ * Author: boniface pereira
+ * Website: www.craftpip.com
+ * Contact: hey@craftpip.com
+ 
+ *
+ * Copyright 2013-2019 jquery-confirm
+ * Licensed under MIT (https://github.com/craftpip/jquery-confirm/blob/master/LICENSE)
+ */
+@keyframes jconfirm-spin {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+body[class*=jconfirm-no-scroll-] {
+    overflow: hidden !important
+}
+
+.jconfirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    font-family: inherit;
+    overflow: hidden
+}
+
+.jconfirm .jconfirm-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity .4s
+}
+
+.jconfirm .jconfirm-bg.jconfirm-bg-h {
+    opacity: 0 !important
+}
+
+.jconfirm .jconfirm-scrollpane {
+    perspective: 500px;
+    perspective-origin: center;
+    display: table;
+    width: 100%;
+    height: 100%
+}
+
+.jconfirm .jconfirm-row {
+    display: table-row;
+    width: 100%
+}
+
+.jconfirm .jconfirm-cell {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.jconfirm .jconfirm-holder {
+    max-height: 100%;
+    padding: 50px 0
+}
+
+.jconfirm .jconfirm-box-container {
+    transition: transform
+}
+
+.jconfirm .jconfirm-box-container.jconfirm-no-transition {
+    transition: none !important
+}
+
+.jconfirm .jconfirm-box {
+    background: #fff;
+    position: relative;
+    outline: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    max-width: 1200px;
+    border-radius: 6px
+}
+
+@keyframes type-blue {
+
+    1%,
+    100% {
+        border-color: #0080bf
+    }
+
+    50% {
+        border-color: #00a2f2
+    }
+}
+
+@keyframes type-green {
+
+    1%,
+    100% {
+        border-color: #2a7f24
+    }
+
+    50% {
+        border-color: #37a72f
+    }
+}
+
+@keyframes type-red {
+
+    1%,
+    100% {
+        border-color: #f23d18
+    }
+
+    50% {
+        border-color: #f56648
+    }
+}
+
+@keyframes type-orange {
+
+    1%,
+    100% {
+        border-color: #f76700
+    }
+
+    50% {
+        border-color: #ff832b
+    }
+}
+
+@keyframes type-dark {
+
+    1%,
+    100% {
+        border-color: #222a3d
+    }
+
+    50% {
+        border-color: #34415e
+    }
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-animated {
+    animation-duration: 2s;
+    animation-iteration-count: infinite
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-blue {
+    border-top: solid 7px #0080bf;
+    animation-name: type-blue
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-green {
+    border-top: solid 7px #2a7f24;
+    animation-name: type-green
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-red {
+    border-top: solid 7px #f23d18;
+    animation-name: type-red
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange {
+    border-top: solid 7px #f76700;
+    animation-name: type-orange
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-dark {
+    border-top: solid 7px #222a3d;
+    animation-name: type-dark
+}
+
+.jconfirm .jconfirm-box.loading {
+    height: 120px
+}
+
+.jconfirm .jconfirm-box.loading:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: #fff;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    z-index: 1
+}
+
+.jconfirm .jconfirm-box.loading:after {
+    opacity: .6;
+    content: '';
+    height: 30px;
+    width: 30px;
+    border: solid 3px transparent;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    border-radius: 50%;
+    animation: jconfirm-spin 1s infinite linear;
+    border-bottom-color: #2d68ac;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 2
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 50px;
+    cursor: pointer
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:after,
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    left: 30px;
+    width: 1px;
+    height: 23px;
+    background: #b3b3b3
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:before {
+    transform: rotate(-45deg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:after {
+    left: 29px;
+    transform: rotate(45deg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:hover:after,
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:hover:before {
+    background: #666
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon:empty {
+    display: none
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .fa {
+    font-size: 16px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .glyphicon {
+    font-size: 16px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-closeIcon .zmdi {
+    font-size: 16px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 20px;
+    user-select: none;
+    cursor: default;
+    padding: 12px 15px 12px;
+    border-bottom: 1px solid #ebebeb
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c.jconfirm-hand {
+    cursor: move
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c {
+    font-size: inherit;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c i {
+    vertical-align: middle
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-icon-c:empty {
+    display: none
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-title {
+    user-select: none;
+    font-size: inherit;
+    font-family: inherit;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.jconfirm .jconfirm-box div.jconfirm-title-c .jconfirm-title:empty {
+    display: none
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane {
+    height: auto;
+    transition: height .4s ease-in;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane.no-scroll {
+    overflow-y: hidden
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar {
+    width: 3px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .1)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 3px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+    overflow: auto;
+    min-height: 90px;
+    padding: 20px 15px 35px;
+    font-size: 14px;
+    text-align: center
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content div {
+    font-size: inherit;
+    color: inherit;
+    letter-spacing: -.5px;
+    line-height: 1.5
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content div h3 {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 19px;
+    letter-spacing: -.5px;
+    margin-bottom: 6px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content div p {
+    width: 100%;
+    margin-bottom: -10px;
+    text-align: left;
+    font-size: inherit;
+    color: inherit;
+    letter-spacing: -.5px;
+    line-height: 1.5
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content img {
+    max-width: 100%;
+    height: auto
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content:empty {
+    display: none
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content [class^=toast-] {
+    min-height: 100px;
+    padding-top: 60px;
+    background: no-repeat center top;
+    background-size: 40px auto;
+    font-size: 17px;
+    line-height: 1.6
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-info {
+    background-image: url(../img/toast-info.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-success {
+    background-image: url(../img/toast-success.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-warning {
+    background-image: url(../img/toast-warning.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-fail {
+    background-image: url(../img/toast-fail.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content [class^=msg-] {
+    position: relative;
+    min-height: 160px;
+    margin: -40px -15px;
+    padding: 140px 15px 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.6
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content [class^=msg-]:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: no-repeat center center;
+    animation: msg-icon 1.2s forwards
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-txt {
+    height: auto;
+    margin: 0;
+    padding: 45px 15px 40px
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-info {
+    background-color: #0080bf
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-info:before {
+    background-image: url(../img/msg-info.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-info+.msg-txt {
+    background-color: #0080bf
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-success {
+    background-color: #2a7f24
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-success:before {
+    background-image: url(../img/msg-success.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-success+.msg-txt {
+    background-color: #2a7f24
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-warning {
+    background-color: #fabb00
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-warning:before {
+    background-image: url(../img/msg-warning.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-warning+.msg-txt {
+    background-color: #fabb00
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-fail {
+    background-color: #f23d18
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-fail:before {
+    background-image: url(../img/msg-fail.svg)
+}
+
+.jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-fail+.msg-txt {
+    background-color: #f23d18
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: -3px;
+    border-top: 1px solid #ebebeb;
+    text-align: center;
+    overflow: hidden
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons>button {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 0;
+    height: 50px;
+    margin: 0;
+    background: 0 0;
+    border: 0;
+    border-left: 1px solid #e5e5e5;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d68ac;
+    transition: background .3s
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons>button:first-of-type {
+    border-left: 0
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons>button.btn-cancel {
+    color: #666
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons>button.btn-bk {
+    color: #222
+}
+
+.jconfirm .jconfirm-box .jconfirm-buttons>button.btn-red {
+    color: #f23d18
+}
+
+.jconfirm .jconfirm-clear {
+    clear: both
+}
+
+.jconfirm.jconfirm-rtl {
+    direction: rtl
+}
+
+.jconfirm.jconfirm-rtl div.jconfirm-closeIcon {
+    left: 10px;
+    right: auto
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-bg,
+.jconfirm.jconfirm-light .jconfirm-bg,
+.jconfirm.jconfirm-white .jconfirm-bg {
+    background-color: #000;
+    opacity: .7
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box,
+.jconfirm.jconfirm-light .jconfirm-box,
+.jconfirm.jconfirm-white .jconfirm-box {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2)
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-white .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+    margin-right: 8px;
+    margin-left: 0
+}
+
+.jconfirm.jconfirm-dialog.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-light.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-white.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+    margin-left: 8px;
+    margin-right: 0
+}
+
+.jconfirm.jconfirm-black .jconfirm-bg,
+.jconfirm.jconfirm-dark .jconfirm-bg {
+    background-color: #2f4f4f;
+    opacity: .4
+}
+
+.jconfirm.jconfirm-black .jconfirm-box,
+.jconfirm.jconfirm-dark .jconfirm-box {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    background: #444;
+    color: #fff
+}
+
+.jconfirm.jconfirm-black .jconfirm-box .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-dark .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+    margin-right: 8px;
+    margin-left: 0
+}
+
+.jconfirm.jconfirm-black.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c,
+.jconfirm.jconfirm-dark.jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+    margin-left: 8px;
+    margin-right: 0
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-bg {
+    background-color: #000;
+    opacity: .7
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    width: 300px
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-title-c .jconfirm-icon-c {
+    margin-right: 8px;
+    margin-left: 0
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+    min-height: 160px;
+    padding: 115px 25px 40px
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-content {
+    position: relative;
+    background: #f2f2f2 no-repeat center 35px;
+    background-size: 65px auto;
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    word-spacing: -1px
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-content:before {
+    font-size: 55px;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-content>div {
+    font-size: 18px;
+    letter-spacing: 1px;
+    word-spacing: -1px;
+    line-height: 1.6
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-buttons {
+    border-top: 1px solid #e5e5e5
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-buttons>button {
+    background: #fff;
+    color: rgba(255, 255, 255, .8);
+    transition: all .3s
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-buttons>button+button {
+    border-left: 1px solid #ccc
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-buttons>button.btn-cancel {
+    background: #fff;
+    color: #999
+}
+
+.jconfirm[class*=jconfirm-type] .jconfirm-box .jconfirm-buttons>button.btn-bk {
+    background: #fff;
+    color: #222
+}
+
+.jconfirm[class*=jconfirm-type].jconfirm-rtl .jconfirm-title-c .jconfirm-icon-c {
+    margin-left: 8px;
+    margin-right: 0
+}
+
+.jconfirm.jconfirm-type-info .jconfirm-box .jconfirm-content {
+    background-image: url(../img/msg-info.svg)
+}
+
+.jconfirm.jconfirm-type-info .jconfirm-box .jconfirm-buttons>button {
+    color: #0080bf
+}
+
+.jconfirm.jconfirm-type-info .jconfirm-box .jconfirm-buttons>button:hover {
+    background-color: #0080bf;
+    color: #fff
+}
+
+.jconfirm.jconfirm-type-success .jconfirm-box .jconfirm-content {
+    background-image: url(../img/msg-success.svg)
+}
+
+.jconfirm.jconfirm-type-success .jconfirm-box .jconfirm-buttons>button {
+    color: #2a7f24
+}
+
+.jconfirm.jconfirm-type-success .jconfirm-box .jconfirm-buttons>button:hover {
+    background-color: #2a7f24;
+    color: #fff
+}
+
+.jconfirm.jconfirm-type-warning .jconfirm-box .jconfirm-content {
+    background-image: url(../img/msg-warning.svg)
+}
+
+.jconfirm.jconfirm-type-warning .jconfirm-box .jconfirm-buttons>button {
+    color: #fabb00
+}
+
+.jconfirm.jconfirm-type-warning .jconfirm-box .jconfirm-buttons>button:hover {
+    background-color: #fabb00;
+    color: #fff
+}
+
+.jconfirm.jconfirm-type-fail .jconfirm-box .jconfirm-content {
+    background-image: url(../img/msg-fail.svg)
+}
+
+.jconfirm.jconfirm-type-fail .jconfirm-box .jconfirm-buttons>button {
+    color: #f23d18
+}
+
+.jconfirm.jconfirm-type-fail .jconfirm-box .jconfirm-buttons>button:hover {
+    background-color: #f23d18;
+    color: #fff
+}
+
+.jconfirm .jconfirm-box.hilight.jconfirm-hilight-shake {
+    animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0)
+}
+
+.jconfirm .jconfirm-box.hilight.jconfirm-hilight-glow {
+    animation: glow .82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0)
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-2px, 0, 0)
+    }
+
+    20%,
+    80% {
+        transform: translate3d(4px, 0, 0)
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-8px, 0, 0)
+    }
+
+    40%,
+    60% {
+        transform: translate3d(8px, 0, 0)
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 red
+    }
+
+    50% {
+        box-shadow: 0 0 30px red
+    }
+}
+
+@keyframes msg-icon {
+    0% {
+        opacity: 0;
+        background-size: 10px auto
+    }
+
+    60% {
+        opacity: .5;
+        background-size: 60px auto
+    }
+
+    70% {
+        opacity: 1;
+        background-size: 40px auto
+    }
+
+    80% {
+        opacity: .8;
+        background-size: 60px auto
+    }
+
+    100% {
+        opacity: .8;
+        background-size: 60px auto
+    }
+}
+
+.jconfirm {
+    perspective: 400px
+}
+
+.jconfirm .jconfirm-box {
+    opacity: 1;
+    transition-property: all
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-bottom,
+.jconfirm .jconfirm-box.jconfirm-animation-left,
+.jconfirm .jconfirm-box.jconfirm-animation-none,
+.jconfirm .jconfirm-box.jconfirm-animation-opacity,
+.jconfirm .jconfirm-box.jconfirm-animation-right,
+.jconfirm .jconfirm-box.jconfirm-animation-rotate,
+.jconfirm .jconfirm-box.jconfirm-animation-rotatex,
+.jconfirm .jconfirm-box.jconfirm-animation-rotatey,
+.jconfirm .jconfirm-box.jconfirm-animation-scale,
+.jconfirm .jconfirm-box.jconfirm-animation-scalex,
+.jconfirm .jconfirm-box.jconfirm-animation-scaley,
+.jconfirm .jconfirm-box.jconfirm-animation-top,
+.jconfirm .jconfirm-box.jconfirm-animation-zoom {
+    opacity: 0
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotate {
+    transform: rotate(90deg)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatex {
+    transform: rotateX(90deg);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatexr {
+    transform: rotateX(-90deg);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotatey {
+    transform: rotatey(90deg);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-rotateyr {
+    transform: rotatey(-90deg);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scaley {
+    transform: scaley(1.5);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scalex {
+    transform: scalex(1.5);
+    transform-origin: center
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-top {
+    transform: translate(0, -100px)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-left {
+    transform: translate(-100px, 0)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-right {
+    transform: translate(100px, 0)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-bottom {
+    transform: translate(0, 100px)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-zoom {
+    transform: scale(1.2)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-scale {
+    transform: scale(.5)
+}
+
+.jconfirm .jconfirm-box.jconfirm-animation-none {
+    visibility: hidden
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-closeIcon {
+    top: 0;
+    right: -40px;
+    color: #fff
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content {
+    padding: 0
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-header {
+    padding: 20px 20px 5px
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-contents {
+    padding: 0 20px
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-footer {
+    position: relative;
+    padding: 15px 20px 20px;
+    overflow: hidden
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-footer button {
+    width: 110px;
+    height: 38px;
+    margin: 0 0 0 5px;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 2px
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-footer button:first-of-type {
+    margin: 0
+}
+
+.jconfirm.jconfirm-dialog .jconfirm-box div.jconfirm-content-pane .jconfirm-content .pnl-footer .buttonset {
+    position: absolute;
+    top: 15px;
+    right: 20px
+}
