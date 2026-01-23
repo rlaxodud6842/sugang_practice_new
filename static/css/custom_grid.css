@@ -2,18 +2,15 @@
 .grid-container {
     width: 100%;
     max-height: 184px;
-    /* 헤더(34px) + 5개 행(30px * 5) = 184px */
     overflow-y: auto;
-    /* 세로 스크롤 활성화 */
     overflow-x: hidden;
-    /* 가로 스크롤 억제 */
     border-top: 2px solid #007b8b;
     border-left: 1px solid #d1d1d1;
     border-right: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1;
 }
 
-/* 스크롤바 디자인 (선택 사항: 더 깔끔하게 보이기 위함) */
+/* 스크롤바 디자인 */
 .grid-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -23,46 +20,43 @@
     border-radius: 3px;
 }
 
+/* 테이블 기본 설정 */
 .custom-lecture-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    /* 가로 고정 유지 */
 }
 
-/* 헤더 고정 (스크롤해도 제목은 보이게) */
+/* 헤더는 기존 스타일 유지 (건드리지 않음) */
 .custom-lecture-table thead {
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
-.custom-lecture-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    /* 가로 너비 고정의 핵심 */
-}
-
-/* 헤더 스타일: 요청 수치 반영 */
 .custom-lecture-table th {
     height: 34px;
     background-color: #f1f1f5;
     color: #333;
     font-weight: 600;
     font-size: 11px;
-    /* 컬럼이 많으므로 폰트 살짝 축소 */
     border-bottom: 1px solid #d1d1d1;
     border-right: 1px solid #d1d1d1;
     padding: 0;
     text-align: center;
 }
 
-/* 데이터 셀 스타일 */
+/* --- 데이터 셀 스타일 수정 시작 --- */
+
+/* 1. 기본 상태: 배경을 흰색(또는 투명)으로 설정 */
+.custom-lecture-table tbody tr {
+    background-color: #ffffff;
+}
+
 .custom-lecture-table td {
     height: 30px;
-    background-color: #e8f8ff;
-    /* 연한 하늘색 배경 */
+    /* 기존 배경색 #e8f8ff 제거 */
+    background-color: transparent;
     border-bottom: 1px solid #d1d1d1;
     border-right: 1px solid #d1d1d1;
     font-size: 11px;
@@ -70,10 +64,22 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* 글자가 길면 ... 처리 */
 }
 
-/* 버튼 디자인 (이미지 참고) */
+/* 2. 호버 상태: 마우스를 올렸을 때만 연한 하늘색 배경 적용 */
+.custom-lecture-table tbody tr:hover {
+    background-color: #e8f8ff !important;
+}
+
+/* 만약 tr 배경색이 td에 가려진다면 아래처럼 작성하세요 */
+.custom-lecture-table tbody tr:hover td {
+    background-color: #e8f8ff !important;
+    cursor: pointer;
+}
+
+/* --- 데이터 셀 스타일 수정 끝 --- */
+
+/* 버튼 디자인 */
 .btn-apply {
     background: #2d7d52;
     color: white;
@@ -83,24 +89,13 @@
     cursor: pointer;
 }
 
-/* 두 테이블 모두에 적용되는 공통 CSS */
-.custom-lecture-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    border-bottom: 1px solid #d1d1d1;
-}
-
-.custom-lecture-table th {
-    background-color: #f1f1f5;
-    height: 34px;
+/* 코드 버튼 (이미지 참고용 추가) */
+.btn-code-blue {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: bold;
     font-size: 11px;
-    border: 1px solid #d1d1d1;
-}
-
-.custom-lecture-table td {
-    height: 30px;
-    border: 1px solid #e1e1e1;
-    text-align: center;
-    font-size: 12px;
 }
