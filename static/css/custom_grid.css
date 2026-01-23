@@ -1,0 +1,54 @@
+/* 부모 컨테이너: 가로 스크롤 억제 */
+.grid-container {
+    width: 100%;
+    border-top: 2px solid #007b8b;
+    /* 이미지 상단 포인트 컬러 */
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+}
+
+.custom-lecture-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* 가로 너비 고정의 핵심 */
+}
+
+/* 헤더 스타일: 요청 수치 반영 */
+.custom-lecture-table th {
+    height: 34px;
+    background-color: #f1f1f5;
+    color: #333;
+    font-weight: 600;
+    font-size: 11px;
+    /* 컬럼이 많으므로 폰트 살짝 축소 */
+    border-bottom: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    padding: 0;
+    text-align: center;
+}
+
+/* 데이터 셀 스타일 */
+.custom-lecture-table td {
+    height: 30px;
+    background-color: #e8f8ff;
+    /* 연한 하늘색 배경 */
+    border-bottom: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    font-size: 11px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 글자가 길면 ... 처리 */
+}
+
+/* 버튼 디자인 (이미지 참고) */
+.btn-apply {
+    background: #2d7d52;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+}

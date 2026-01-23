@@ -1,106 +1,104 @@
-<html lang="ko" style="--vsc-domain: &quot;sugang.daegu.ac.kr&quot;;"><head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta charset="UTF-8">
-	<title>수강신청시스템</title>
+<html lang="ko" style="--vsc-domain: &quot;sugang.daegu.ac.kr&quot;;">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <title>수강신청시스템</title>
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-	<link href="../static/css/ui.min.css?" rel="stylesheet" type="text/css">
-	<link href="../static/css/color.min.css" rel="stylesheet" type="text/css">
-	<link href="../static/css/toastr.css" rel="stylesheet" type="text/css">
-	<link href="../static/css/jquery-ui.css" rel="stylesheet" type="text/css">
-	<link href="../static/css/jqgrid.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/ui.min.css?" rel="stylesheet" type="text/css" />
+    <link href="../static/css/color.min.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/toastr.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/jqgrid.css" rel="stylesheet" type="text/css" />
 
-	
-	<style>
-		.ui-jqgrid .ui-jqgrid-htable th div {
-			cursor: default;
-		}
-		#gbox_GridLecture .ui-jqgrid-htable th div {
-			cursor: pointer;
-		}
-		#gbox_GridLecture .s-ico {
-			display: inline-block !important; /* 항상 아이콘이 보이도록 설정 */
-			visibility: visible !important;
-		}
-		.jconfirm-content-pane {
-			overflow-y: auto; /* 세로 스크롤 활성화 */
-		}
-	</style>
-
-</head>
-<body class="main">
-	<div class="wrap-loader hidden" style="display: none;"><span class="loading-helper"></span><div class="loader"></div><div class="loading-text">Loading</div></div>
-	<span class="to-top"></span>
-	<div class="container">
-		<div class="header nav-open">
-			<div>
-				<div class="is-left">
-					<img src="/static/img/logo.png">
-					<span class="title">
-						2026년도 1학기
-					</span>
-				</div>
-				<div class="is-right">
-					<div class="user-name" style="font-weight: bold">
-						김태영(<span>22028137</span>)
-						<span class="split"></span>
-						최대신청가능학점 :<em>19</em>
-						<span class="split"></span>
-						최대신청가능학점(교양) :<em>11</em>
-						<span class="split"></span>
-					</div>
-					<div class="timer" style="display: none;">
-						<span id="timerRemain">09:37</span>
-						<button type="button" id="btnTimer" onclick="javascript:extendTimer('reload');">연장하기</button>
-					</div>
-					<!--
+    <style>
+      .ui-jqgrid .ui-jqgrid-htable th div {
+        cursor: default;
+      }
+      #gbox_GridLecture .ui-jqgrid-htable th div {
+        cursor: pointer;
+      }
+      #gbox_GridLecture .s-ico {
+        display: inline-block !important; /* 항상 아이콘이 보이도록 설정 */
+        visibility: visible !important;
+      }
+      .jconfirm-content-pane {
+        overflow-y: auto; /* 세로 스크롤 활성화 */
+      }
+    </style>
+  </head>
+  <body class="main">
+    <div class="wrap-loader hidden" style="display: none;">
+      <span class="loading-helper"></span><div class="loader"></div>
+      <div class="loading-text">Loading</div>
+    </div>
+    <span class="to-top"></span>
+    <div class="container">
+      <div class="header nav-open">
+        <div>
+          <div class="is-left">
+            <img src="/static/img/logo.png" />
+            <span class="title">2026년도 1학기</span>
+          </div>
+          <div class="is-right">
+            <div class="user-name" style="font-weight: bold">
+              김태영(<span>22028137</span>)
+              <span class="split"></span>
+              최대신청가능학점 :<em>19</em>
+              <span class="split"></span>
+              최대신청가능학점(교양) :<em>11</em>
+              <span class="split"></span>
+            </div>
+            <div class="timer" style="display: none;">
+              <span id="timerRemain">09:37</span>
+              <button type="button" id="btnTimer" onclick="javascript:extendTimer('reload');">연장하기</button>
+            </div>
+            <!--       
 						<div class="radio-group" style="margin-right: 20px;">
 							<input type="radio" name="lang" id="kor" value="ko" onClick="fnLang('ko')" checked><label for="kor">한국어</label>
 							<input type="radio" name="lang" id="eng" value="en" onClick="fnLang('en')" ><label for="eng">English</label>
 						</div>
-					-->
-					<button type="button" class="btn-del btn-md" onclick="logout();">
-						로그아웃
-					</button>
-					<!-- 학생정보 레이어 -->
-					<div class="layer-user" id="layer-user-id" style="display: block;">
-						<ul>
-							<li>
-								<label>학번</label>
-								<span>22028137</span>
-							</li>
-							<li>
-								<label>성명</label>
-								<span>김태영</span>
-							</li>
-							<li>
-								<label>전공</label>
-								<span>AI학과</span>
-							</li>
-							<li>
-								<label>학년</label>
-								<span>4학년</span>
-							</li>
-							<li>
-								<label>최대신청가능학점</label>
-								<span><em>19</em>학점</span>
-							</li>
-							<li>
-								<label>최대신청가능학점(교양)</label>
-								<span><em>11</em>학점</span>
-							</li>
-							<li>
-								<label>수강신청시작일</label>
-								<span><em>2026-01-21 10:00</em></span>
-							</li>
-							<li>
-								<label>수강신청종료일</label>
-								<span><em>2026-01-23 17:00</em></span>
-							</li>
-							<li>
-								<label>이전접속시간</label>
-								<span>2026-01-21 09:43</span>
-							</li>
-							<!--<li>
+					       -->
+            <button type="button" class="btn-del btn-md" onclick="logout();">로그아웃</button>
+            <!-- 학생정보 레이어 -->
+            <div class="layer-user" id="layer-user-id" style="display: block;">
+              <ul>
+                <li>
+                  <label>학번</label>
+                  <span>22028137</span>
+                </li>
+                <li>
+                  <label>성명</label>
+                  <span>김태영</span>
+                </li>
+                <li>
+                  <label>전공</label>
+                  <span>AI학과</span>
+                </li>
+                <li>
+                  <label>학년</label>
+                  <span>4학년</span>
+                </li>
+                <li>
+                  <label>최대신청가능학점</label>
+                  <span><em>19</em>학점</span>
+                </li>
+                <li>
+                  <label>최대신청가능학점(교양)</label>
+                  <span><em>11</em>학점</span>
+                </li>
+                <li>
+                  <label>수강신청시작일</label>
+                  <span><em>2026-01-21 10:00</em></span>
+                </li>
+                <li>
+                  <label>수강신청종료일</label>
+                  <span><em>2026-01-23 17:00</em></span>
+                </li>
+                <li>
+                  <label>이전접속시간</label>
+                  <span>2026-01-21 09:43</span>
+                </li>
+                <!--       <li>
 								<label>
 									<button type="button" class="btn-main" onclick="javascript:fnGoMoveUserInfo('detail');">상세보기</button>
 								</label>
@@ -108,265 +106,255 @@
 								<span>
 									<button type="button" class="btn-sub" onclick="javascript:fnGoMoveUserInfo('close');">닫기</button>
 								</span>
-							</li> -->
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="body nav-open">
-			<div class="nav">
-				<span class="btn-menu" title="메뉴닫기"></span>
-				<ul class="nav-menu">
-					<li class="is-active" onclick="fnLoad('/p/c/notice','1');" style="pointer-events:block;cursor:pointer;">
-						<i class="nav-icon-01"></i>
-						<span>공지사항</span>
-					</li>
-					<li onclick="fnLoad('/p/c/searchMain','2');" style="pointer-events:block;cursor:pointer;">
-						<i class="nav-icon-08"></i>
-						<span>조회</span>
-					</li>
-					<li onclick="location.href='/sinchung'" style="pointer-events:block;cursor:pointer;">
-						<i class="nav-icon-06"></i>
-						<span>예비수강</span>
-					</li>
-					<li onclick="fnLoad('/p/s/sugangMain','4');" style="pointer-events:block;cursor:pointer;">
-						<i class="nav-icon-04"></i>
-						<span>수강신청</span>
-					</li>
-					
-					<!--<li onClick="fnSurvey();">
+							</li>        -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body nav-open">
+        <div class="nav">
+          <span class="btn-menu" title="메뉴닫기"></span>
+          <ul class="nav-menu">
+            <li class="is-active" onclick="fnLoad('/p/c/notice','1');" style="pointer-events:block;cursor:pointer;">
+              <i class="nav-icon-01"></i>
+              <span>공지사항</span>
+            </li>
+            <li onclick="fnLoad('/p/c/searchMain','2');" style="pointer-events:block;cursor:pointer;">
+              <i class="nav-icon-08"></i>
+              <span>조회</span>
+            </li>
+            <li onclick="location.href='/sinchung'" style="pointer-events:block;cursor:pointer;">
+              <i class="nav-icon-06"></i>
+              <span>예비수강</span>
+            </li>
+            <li onclick="fnLoad('/p/s/sugangMain','4');" style="pointer-events:block;cursor:pointer;">
+              <i class="nav-icon-04"></i>
+              <span>수강신청</span>
+            </li>
+
+            <!--       <li onClick="fnSurvey();">
 						<i class="nav-icon-01"></i>
 						<span>만족도조사</span>
-					</li>-->
-				</ul>
-			</div>
-			<div class="contents" id="contents"><div>
-
-
-
-
-
-	
-		
-		
-	
-	
-
-	<ul class="sw-tabs">
-		<li data-id="tab_01" class="is-active">수강신청 안내</li>
-		<li data-id="tab_02">시스템 유의사항</li>
-	</ul>
-	<div class="sw-tab-contents">
-		<div id="tab_01" class="is-active">
-			<!--<div class="info-box" style="padding: 5px">
+					</li>       -->
+          </ul>
+        </div>
+        <div class="contents" id="contents">
+          <div>
+            <ul class="sw-tabs">
+              <li data-id="tab_01" class="is-active">수강신청 안내</li>
+              <li data-id="tab_02">시스템 유의사항</li>
+            </ul>
+            <div class="sw-tab-contents">
+              <div id="tab_01" class="is-active">
+                <!--       <div class="info-box" style="padding: 5px">
 				<div id="contents_notice"><div>Loading...</div></div>
-			</div>-->
-			<div class="info-box">
-				<p class="info-txt is-red txt-red">복수(연계)전공 이수 안내</p>
-				<ul class="list-icon">
-					<li><b>1. 이수학점</b>
-						<ul class="list-dot">
-							<li>
-								가.복수전공 이수자는 복수전공(학과)의 졸업에 필요한 전공 인정학점(전공필수 포함, 교육과정편
-								람의 졸업이수학점 참고) 이상 이수하여야 하며,<br>
-								반드시 복수전공(학과)에서 개설한 교육과정에 따라 이수하여야 합니다.
-							</li>
-							<li>
-								나.연계전공을 복수전공으로 이수 하고자할 경우 각 연계영역(학과, 전공)별 최소 9～12학점 이상을
-								포함하여 연계전공 인정학점 이상을 이수하여야 합니다.<br>
-								-2004학년도 이전 입학자 : 각 영역별 6학점 이상<br>
-								-2005학년도 입학자부터 : 3개 연계영역 : 12학점 이상, 4개 연계영역 : 9학점 이상
-							</li>
-						</ul>
-					</li>
-					<li><b>2.교과목 인정(필독)</b>
-						<ul class="list-dot">
-							<li>
-								가. 복수전공(학과)의 전공과목을 복수전공 승인 이전에 일반선택으로 이미 이수한 경우 복수전공과목으로 대체 인정할 수 있습니다.
-							</li>
-							<li>
-								나. 제1전공 전공교과목이 복수전공의 전공교과목과 명칭이 동일한 교과목은 9학점 범위내에서 중복 인정 할 수 있습니다.<br>
-								다만, 교직과정이수자의 중복인정 범위 등은 관련법규에 의합니다.
-							</li>
-							<li>
-								다. 연계전공을 복수전공으로 이수할 경우에는 반드시 연계전공에서 개설한 교과목을 이수하여야 연계전공 이수학점으로 인정합니다.<br>
-								다만, 소속 학과(전공) 교과목이 연계전공 교육과정의 연계영역에 포함될 경우 제1전공 교과목으로 인정합니다.
-							</li>
-							<li>
-								라. 복수전공의 전공필수 교과목은 반드시 복수전공에서 개설된 교과목을 이수하여야만 복수전공 학점으로 인정됩니다.<br>
-								(타 전공에서 개설된 명칭이 동일한 과목을 이수하면 일반선택으로 인정함)
-							</li>
-						</ul>
-					</li>
-					<p class="info-txt is-red txt-red">교차설강 교과목 수강신청 안내</p>
-					<ul class="list-icon">
-						<ul class="list-dot">
-							<li class="info-txt is-red txt-red">
-								교차설강 또는 이중설강 교과목의 경우 반드시 인정받고자 하는 개설전공의 수강번호를 지정하여 수강신청 바랍니다.<br>
-								특히 교직이수 중인 학생은 교직사정 전공학점 인정을 위해 해당 전공의 수강번호를 확인하여 신청바랍니다.
-							</li>
-						</ul>
-					</ul>
-					<br>
-					※자세한 사항은 <a href="https://www.daegu.ac.kr/article/DG159/list" target="_blank">홈페이지 학사공지</a> 참조
-				</ul>
-			</div>
-		</div>
-		<div id="tab_02">
-			
-				
-				
-					<div class="info-box">
-						<ul class="list-icon">
-							<li><b>매크로 프로그램 방지</b>
-								<ul class="list-dot">
-									<li>매크로프로그램 사용을 방지하기 위해 관리자가 지정한 횟수이상 저장을 시도하면 화면에 나타나는 문자열을 입력하고 계속 사용 하여야함</li>
-									<li>문자열 오류 횟수가 지정된 횟수 이상 이면 자동 로그아웃되고 문자열 입력이 올바를 경우 이전 요청이 자동 수행됨</li>
-								</ul>
-							</li>
-							<li><b>중복 로그인 방지( One Device )</b>
-								<ul class="list-dot">
-									<li>동일한 학번으로 동시에 두 군데 이상의 PC나 모바일에서 로그인 했을 경우 마지막으로 로그인 한 사용자만 사용가능하며 나머지는 강제 로그아웃됨</li>
-								</ul>
-							</li>
-							<li><b>브라우저 &amp; 모니터 해상도</b>
-								<ul class="list-dot">
-									<li>크롬, 파이어폭스, 사파리 브라우저에 최적화 되있습니다.</li>
-									<li>인터넷 익스플로러 11이하 버전을 사용하시는 분들은 정상적으로 동작하지 않을수 있으며, 보안상의 이유로도 11 버전이상으로 업그레이드 하시기를 권장</li>
-									<li>수강신청시스템은 1280*800 해상도에 최적화 되어 있으며 그 이상의 해상도로 화면 설정</li>
-								</ul>
-							</li>
-							<li><b>팝업차단 해제</b>
-								<ul class="list-dot">
-									<li>팝업차단 설정이 해제 되지 않았을 경우 팝업차단을 해제</li>
-									<li>팝업차단 해제 방법으로 브라우저에서 “도구/인터넷옵션/팝업차단설정/” 현재 사이트의 팝업을 항상 “허용”</li>
-									<li>팝업 설정 및 해제는 브라우저, 버전별로 방법이 다를 수 있으니 해당 브라우저 공식사이트 또는 검색을 통해 확인 바람</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				
-			
-		</div>
-	</div>
-	
-<script type="text/javascript">
-$(document).ready(function(){
-	//탭
-	swTab();
+			</div>       -->
+                <div class="info-box">
+                  <p class="info-txt is-red txt-red">복수(연계)전공 이수 안내</p>
+                  <ul class="list-icon">
+                    <li>
+                      <b>1. 이수학점</b>
+                      <ul class="list-dot">
+                        <li>
+                          가.복수전공 이수자는 복수전공(학과)의 졸업에 필요한 전공 인정학점(전공필수 포함, 교육과정편 람의 졸업이수학점 참고) 이상 이수하여야 하며,<br />
+                          반드시 복수전공(학과)에서 개설한 교육과정에 따라 이수하여야 합니다.
+                        </li>
+                        <li>
+                          나.연계전공을 복수전공으로 이수 하고자할 경우 각 연계영역(학과, 전공)별 최소 9～12학점 이상을 포함하여 연계전공 인정학점 이상을 이수하여야 합니다.<br />
+                          -2004학년도 이전 입학자 : 각 영역별 6학점 이상<br />
+                          -2005학년도 입학자부터 : 3개 연계영역 : 12학점 이상, 4개 연계영역 : 9학점 이상
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b>2.교과목 인정(필독)</b>
+                      <ul class="list-dot">
+                        <li>가. 복수전공(학과)의 전공과목을 복수전공 승인 이전에 일반선택으로 이미 이수한 경우 복수전공과목으로 대체 인정할 수 있습니다.</li>
+                        <li>
+                          나. 제1전공 전공교과목이 복수전공의 전공교과목과 명칭이 동일한 교과목은 9학점 범위내에서 중복 인정 할 수 있습니다.<br />
+                          다만, 교직과정이수자의 중복인정 범위 등은 관련법규에 의합니다.
+                        </li>
+                        <li>
+                          다. 연계전공을 복수전공으로 이수할 경우에는 반드시 연계전공에서 개설한 교과목을 이수하여야 연계전공 이수학점으로 인정합니다.<br />
+                          다만, 소속 학과(전공) 교과목이 연계전공 교육과정의 연계영역에 포함될 경우 제1전공 교과목으로 인정합니다.
+                        </li>
+                        <li>
+                          라. 복수전공의 전공필수 교과목은 반드시 복수전공에서 개설된 교과목을 이수하여야만 복수전공 학점으로 인정됩니다.<br />
+                          (타 전공에서 개설된 명칭이 동일한 과목을 이수하면 일반선택으로 인정함)
+                        </li>
+                      </ul>
+                    </li>
+                    <p class="info-txt is-red txt-red">교차설강 교과목 수강신청 안내</p>
+                    <ul class="list-icon">
+                      <ul class="list-dot">
+                        <li class="info-txt is-red txt-red">
+                          교차설강 또는 이중설강 교과목의 경우 반드시 인정받고자 하는 개설전공의 수강번호를 지정하여 수강신청 바랍니다.<br />
+                          특히 교직이수 중인 학생은 교직사정 전공학점 인정을 위해 해당 전공의 수강번호를 확인하여 신청바랍니다.
+                        </li>
+                      </ul>
+                    </ul>
+                    <br />
+                    ※자세한 사항은 <a href="https://www.daegu.ac.kr/article/DG159/list" target="_blank">홈페이지 학사공지</a> 참조
+                  </ul>
+                </div>
+              </div>
+              <div id="tab_02">
+                <div class="info-box">
+                  <ul class="list-icon">
+                    <li>
+                      <b>매크로 프로그램 방지</b>
+                      <ul class="list-dot">
+                        <li>매크로프로그램 사용을 방지하기 위해 관리자가 지정한 횟수이상 저장을 시도하면 화면에 나타나는 문자열을 입력하고 계속 사용 하여야함</li>
+                        <li>문자열 오류 횟수가 지정된 횟수 이상 이면 자동 로그아웃되고 문자열 입력이 올바를 경우 이전 요청이 자동 수행됨</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b>중복 로그인 방지( One Device )</b>
+                      <ul class="list-dot">
+                        <li>동일한 학번으로 동시에 두 군데 이상의 PC나 모바일에서 로그인 했을 경우 마지막으로 로그인 한 사용자만 사용가능하며 나머지는 강제 로그아웃됨</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b>브라우저 &amp; 모니터 해상도</b>
+                      <ul class="list-dot">
+                        <li>크롬, 파이어폭스, 사파리 브라우저에 최적화 되있습니다.</li>
+                        <li>인터넷 익스플로러 11이하 버전을 사용하시는 분들은 정상적으로 동작하지 않을수 있으며, 보안상의 이유로도 11 버전이상으로 업그레이드 하시기를 권장</li>
+                        <li>수강신청시스템은 1280*800 해상도에 최적화 되어 있으며 그 이상의 해상도로 화면 설정</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <b>팝업차단 해제</b>
+                      <ul class="list-dot">
+                        <li>팝업차단 설정이 해제 되지 않았을 경우 팝업차단을 해제</li>
+                        <li>팝업차단 해제 방법으로 브라우저에서 “도구/인터넷옵션/팝업차단설정/” 현재 사이트의 팝업을 항상 “허용”</li>
+                        <li>팝업 설정 및 해제는 브라우저, 버전별로 방법이 다를 수 있으니 해당 브라우저 공식사이트 또는 검색을 통해 확인 바람</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-	//fnNotice(); -- 대구대는 공지사항 사용하지 않음 X
-	$(".sw-tabs li").click(function(e){
-		fnSetTab($(this).data("id"));
-	});
-	/*$(".sw-tabs li").click(function(e){
-		fnSetTab($(this).data("id"));
-	});*/
-	fnLoadEnd();
-});
-function fnSetTab(tabId){
-	if (tabId === "tab_01") {
-		//fnNotice();	-- 대구대는 공지사항 사용하지 않음 X
-	}else if (tabId === "tab_02") {
+            <script type="text/javascript">
+              $(document).ready(function () {
+                //탭
+                swTab()
+              
+                //fnNotice(); -- 대구대는 공지사항 사용하지 않음 X
+                $('.sw-tabs li').click(function (e) {
+                  fnSetTab($(this).data('id'))
+                })
+                /*$(".sw-tabs li").click(function(e){
+                                                                                                  		fnSetTab($(this).data("id"));
+                                                                                                  	});*/
+                fnLoadEnd()
+              })
+              function fnSetTab(tabId) {
+                if (tabId === 'tab_01') {
+                  //fnNotice();	-- 대구대는 공지사항 사용하지 않음 X
+                } else if (tabId === 'tab_02') {
+                } else if (tabId === 'tab_03') {
+                }
+                setTimeout(function () {
+                  fnLoadEnd()
+                }, 400)
+              }
+              function fnNotice() {
+                $('#contents_notice > div').empty()
+                let menuUrl, menuNo
+                menuUrl = '/p/c/noticeDetail'
+                if ('' != '') {
+                  menuUrl = '/p/c/noticeDetail?param=&device=&lang='
+                }
+                menuNo = '1'
+                fnLoadNotice(menuUrl, menuNo)
+                //noticeFrm.location.href = menuUrl;
+              }
+              function fnLoadNotice(menuUrl, menuNo) {
+                try {
+                  extendTimer()
+                } catch (err) {
+                  true
+                }
+                $('.nav-menu  > li').removeClass('is-active')
+                $('.nav-menu li:nth-child(' + menuNo + ')').addClass('is-active')
+                $('#contents_notice').load(menuUrl, function (response, status, xhr) {
+                  fnLoadEnd()
+                  if (status === 'success') {
+                    let rs, code, message
+                    try {
+                      rs = $.parseJSON(response)
+                    } catch (err) {}
+                    if (rs === undefined) {
+                      code = '200'
+                      message = 'OK'
+                    } else {
+                      code = rs.code || rs.rows[0].code
+                      message = rs.message || rs.rows[0].message
+                    }
+                    if (code === '999') {
+                      $('.contents_notice > div').hide()
+                      logout(message)
+                    } else if (code == 'DB' || code != '200') {
+                      $('.contents_notice > div').empty()
+                      fnAlert(message)
+                    }
+                  } else {
+                    setTimeout(function () {
+                      //location.reload();
+                      fnAlert('Failed to load normally')
+                    }, 500)
+                  }
+                })
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+      <footer class="footer nav-open">
+        <div>
+          <div class="is-left">
+            38453) 경상북도 경산시 진량읍 대구대로 201 TEL 053-850-5000 (대표번호, 학생행복콜센터) FAX 053-850-5009<br />Copyright(c) 2024 By Daegu University All right Reserved.
+          </div>
+          <div class="is-right">
+            <button type="button" class="btn-footer" onclick="javascript:fnPersonalInfo('https://www.daegu.ac.kr/page/283');">
+              <i class="sw-icon-personal-info"></i>
+              <span>개인정보처리방침</span>
+            </button>
+            <button type="button" class="btn-manual" onclick="javascript:fnDownManual('/static/file/manual/manual_pc.pdf');">
+              <i class="sw-icon-pc"></i>
+              <span>사용자매뉴얼 (PC)</span>
+            </button>
+            <button type="button" class="btn-manual" onclick="javascript:fnDownManual('/static/file/manual/manual_mobile.pdf');">
+              <i class="sw-icon-mobile"></i>
+              <span>사용자매뉴얼 (MOBILE)</span>
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../static/js/lib/jquery-1.12.4.min.js" type="text/javascript"></script>
 
-	}else if (tabId === "tab_03") {
+    <script src="../static/js/lib/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
+    <script src="../static/js/lib/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="../static/js/lib/jquery-confirm.min.js" type="text/javascript"></script>
+    <script src="../static/js/lib/toastr.min.js" type="text/javascript"></script>
+    <script src="../static/js/lib/md5.min.js" type="text/javascript"></script>
+    <!-- 2024.12.05. kenn -->
+    <script type="text/javascript">
+      const context = ''
+      const device = 'XX'
+      const S_HG_GBN = 'H'
+      const S_HAKGWA = ''
+      const S_JUNGONG = '437400'
+      const S_HAKNYUN = '4'
+      let lang = 'ko'
+    </script>
 
-	}
-	setTimeout(function(){
-		fnLoadEnd();
-	},400);
-}
-function fnNotice(){
-	$("#contents_notice > div").empty();
-	let menuUrl,menuNo;
-	menuUrl	= "/p/c/noticeDetail";
-	if('' != ''){
-		menuUrl = "/p/c/noticeDetail?param=&device=&lang=";
-	}
-	menuNo	= "1";
-	fnLoadNotice(menuUrl,menuNo);
-	//noticeFrm.location.href = menuUrl;
-}
-function fnLoadNotice(menuUrl, menuNo){
-	try{extendTimer();}catch(err){true;}
-	$(".nav-menu  > li").removeClass("is-active");
-	$(".nav-menu li:nth-child("+menuNo+")").addClass("is-active");
-	$("#contents_notice").load(menuUrl, function(response, status, xhr){
-		fnLoadEnd();
-		if(status === "success"){
-			let rs, code, message;
-			try{
-				rs = $.parseJSON(response);
-			}catch(err){}
-			if(rs === undefined){
-				code 	= "200";
-				message = "OK";
-			}else{
-				code 	= rs.code || rs.rows[0].code;
-				message = rs.message || rs.rows[0].message;
-			}
-			if(code === "999"){
-				$(".contents_notice > div").hide();
-				logout(message);
-			}else if(code == "DB" || code != "200"){
-				$(".contents_notice > div").empty();
-				fnAlert(message);
-			}
-		}else{
-			setTimeout(function(){
-				//location.reload();
-				fnAlert("Failed to load normally");
-			},500);
-		}
-	});
-}
-</script></div></div>
-		</div>
-		<footer class="footer nav-open">
-			<div>
-				<div class="is-left">
-					38453) 경상북도 경산시 진량읍 대구대로 201 TEL 053-850-5000 (대표번호, 학생행복콜센터) FAX 053-850-5009<br>Copyright(c) 2024 By Daegu University All right Reserved.
-				</div>
-				<div class="is-right">
-					<button type="button" class="btn-footer" onclick="javascript:fnPersonalInfo('https://www.daegu.ac.kr/page/283');">
-						<i class="sw-icon-personal-info"></i>
-						<span>
-							개인정보처리방침
-						</span>
-					</button>
-					<button type="button" class="btn-manual" onclick="javascript:fnDownManual('/static/file/manual/manual_pc.pdf');">
-						<i class="sw-icon-pc"></i>
-						<span>
-							사용자매뉴얼 (PC)
-						</span>
-					</button>
-					<button type="button" class="btn-manual" onclick="javascript:fnDownManual('/static/file/manual/manual_mobile.pdf');">
-						<i class="sw-icon-mobile"></i>
-						<span>
-							사용자매뉴얼 (MOBILE)
-						</span>
-					</button>
-				</div>
-			</div>
-		</footer>
-	</div>
-		<script src="../static/js/lib/jquery-1.12.4.min.js" type="text/javascript"></script>
-		
-		<script src="../static/js/lib/jquery-ui-1.12.1.min.js" type="text/javascript"></script>
-		<script src="../static/js/lib/jquery.jqGrid.min.js" type="text/javascript"></script>
-		<script src="../static/js/lib/jquery-confirm.min.js" type="text/javascript"></script>
-		<script src="../static/js/lib/toastr.min.js" type="text/javascript"></script>
-		<script src="../static/js/lib/md5.min.js" type="text/javascript"></script>
-		<!-- 2024.12.05. kenn -->
-		<script type="text/javascript">
-			const context 			= "";
-			const device			= "XX";
-			const S_HG_GBN			= 'H';
-			const S_HAKGWA			= '';
-			const S_JUNGONG			= '437400';
-			const S_HAKNYUN			= '4';
-			let lang 				= "ko";
-		</script>
-
-</body></html>
+    <script src="../static/js/fn-fp.min.js" type="text/javascript"></script>
+    <script src="../static/js/fn-home.min.js" type="text/javascript"></script>
+    <script src="../static/js/fn-env.min.js" type="text/javascript"></script>
+    <script src="../static/js/fn-infomation.min.js" type="text/javascript"></script>
+  </body>
+</html>
