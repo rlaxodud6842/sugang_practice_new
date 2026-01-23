@@ -61,6 +61,28 @@ window.handleFastApply = function () {
     const codeInput = document.getElementById('pGwamokCd');
     const inputCode = codeInput.value.trim(); // 입력된 값 (예: '2026', '7777' 등)
 
+    // 1. 유효성 검사 (숫자만, 최대 4자리)
+    const isNumeric = /^[0-9]+$/.test(inputCode); // 숫자 체크 정규식
+
+    if (!inputCode) {
+        alert("수강번호를 입력해주세요.");
+        codeInput.focus();
+        return;
+    }
+
+    if (!isNumeric) {
+        alert("수강번호는 숫자만 입력 가능합니다.");
+        codeInput.value = "";
+        codeInput.focus();
+        return;
+    }
+
+    if (inputCode.length > 4) {
+        alert("수강번호는 최대 4자리까지만 입력 가능합니다.");
+        codeInput.focus();
+        return;
+    }
+
     if (!inputCode) {
         alert("수강번호를 입력해주세요.");
         codeInput.focus();
@@ -77,6 +99,10 @@ window.handleFastApply = function () {
     // 2. 입력된 번호에 매칭할 랜덤 과목명 생성 (MZ 테마)
     const randomCourse = courseDB[Math.floor(Math.random() * courseDB.length)];
     const timeInfo = generateRandomTime(); // 요일/시간 생성
+
+    if (!confirm(`[수강번호 : ${inputCode}] 과목을 신청하시겠습니까?`)) {
+        return; // '취소' 클릭 시 함수 종료
+    }
 
     // 3. 시간대 중복 정밀 체크
     const isOverlapped = list.some(i => {
@@ -124,6 +150,8 @@ window.handleFastApply = function () {
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
 
     if (typeof window.renderGrid === 'function') window.renderGrid();
+
+    alert("수강신청이 성공적으로 저장되었습니다!")
 
     // 6. 입력창 초기화
     codeInput.value = "";
@@ -191,6 +219,10 @@ function deleteLecture(code) {
 }
 
 window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
+    // 1. 신청 의사 확인
+    if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
+        return; // '취소' 클릭 시 함수 종료
+    }
     // 1. 전달받은 인자로 데이터 객체 생성
     const newItem = {
         SUGANG_NO: code,
@@ -216,6 +248,8 @@ window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
 
     list.push(newItem);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
+
+    alert("수강신청이 성공적으로 저장되었습니다!")
 
     // 3. 하단 커스텀 그리드 갱신
     if (typeof window.renderGrid === 'function') {
