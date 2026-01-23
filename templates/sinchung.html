@@ -65,12 +65,12 @@
               <span id="timerRemain">09:45</span>
               <button type="button" id="btnTimer" onclick="javascript:extendTimer('reload');">연장하기</button>
             </div>
-            <!--                                      
+            <!--                                                        
 						<div class="radio-group" style="margin-right: 20px;">
 							<input type="radio" name="lang" id="kor" value="ko" onClick="fnLang('ko')" checked><label for="kor">한국어</label>
 							<input type="radio" name="lang" id="eng" value="en" onClick="fnLang('en')" ><label for="eng">English</label>
 						</div>
-					                                      -->
+					                                                        -->
             <button type="button" class="btn-del btn-md" onclick="logout();">로그아웃</button>
             <!-- 학생정보 레이어 -->
             <div class="layer-user" id="layer-user-id" style="display: none;">
@@ -111,7 +111,7 @@
                   <label>이전접속시간</label>
                   <span>2026-01-21 10:02</span>
                 </li>
-                <!--                                      <li>
+                <!--                                                        <li>
 								<label>
 									<button type="button" class="btn-main" onclick="javascript:fnGoMoveUserInfo('detail');">상세보기</button>
 								</label>
@@ -119,7 +119,7 @@
 								<span>
 									<button type="button" class="btn-sub" onclick="javascript:fnGoMoveUserInfo('close');">닫기</button>
 								</span>
-							</li>                                       -->
+							</li>                                                         -->
               </ul>
             </div>
           </div>
@@ -146,10 +146,10 @@
               <span>수강신청</span>
             </li>
 
-            <!--                                      <li onClick="fnSurvey();">
+            <!--                                                        <li onClick="fnSurvey();">
 						<i class="nav-icon-01"></i>
 						<span>만족도조사</span>
-					</li>                                      -->
+					</li>                                                        -->
           </ul>
         </div>
         <div class="contents" id="contents">
@@ -162,9 +162,9 @@
                 <div class="form-group">
                   <label class="txt-main">■ 빠른수강신청</label>
                   <input type="text" name="pGwamokCd" id="pGwamokCd" maxlength="4" placeholder="수강번호(4자리)" style="width:100px;" />
-                  <!--                                       -
+                  <!--                                                         -
         <input type="text" name="pBunban" id="pBunban" maxlength="2" placeholder="분반(2자리)" style="width:100px;">
-                                              -->
+                                                                -->
                   &nbsp;
                   <button type="button" class="btn-main btn-mode" id="btnFast" onclick="handleFastApply()">신청</button>
                 </div>
@@ -182,8 +182,8 @@
                         <col width="100px" />
                         <col width="80px" />
                         <col width="100px" />
-                        <!--                                      <col width="80px">
-                <col width="200px">                                      -->
+                        <!--                                                        <col width="80px">
+                <col width="200px">                                                        -->
                         <col />
                       </colgroup>
                       <tbody>
@@ -358,14 +358,14 @@
                               <option value="0" selected="">주간</option>
                             </select>
                           </td>
-                          <!--                                      <th>과목명</th>
+                          <!--                                                        <th>과목명</th>
                 <td>
                     <div class="search-container">
                         <input type="text" id="pSearchLecture" placeholder='과목명'  style="width:150px;">
                         <i class="sw-icon-search search-icon"></i>
                         <i class="sw-icon-close clear-icon" onclick="fnClearSearchKeyword('pSearchLecture');"></i>
                     </div>
-                </td>                                      -->
+                </td>                                                        -->
                           <td>
                             <button type="button" class="btn-sub" id="btnSearch">조회</button>
                           </td>
@@ -374,7 +374,7 @@
                     </table>
                   </form>
 
-                  <!--                                      
+                  <!--                                                        
     <div class="table" id="formTbl">
         <div class="row">
         <span class="header" style="width:80px;">개설전공</span>
@@ -394,7 +394,7 @@
         </span>
         </div>
     </div>
-                                          -->
+                                                            -->
                 </div>
                 <div>
                   <div class="cols space-15">
@@ -929,7 +929,7 @@
                           </h1>
                         </div>
                         <div class="actions">
-                          <!--                                      
+                          <!--                                                        
                         <i class="sw-icon-help" id="btnBasketInfo" style="cursor:pointer;" title="장바구니 구분 정보"></i>
                         <div class="drop-layer" id="drop-layer-basket">
                             <p class="info-txt">장바구니 구분 정보</p>
@@ -953,7 +953,7 @@
                                 </tbody>
                             </table>
                         </div>
-                                                              -->
+                                                                                -->
                           <div class="radio-group" style="display: inline-flex;">
                             <input type="radio" name="pSaveGbn" id="pSaveGbn1" value="1" checked="" /><label for="pSaveGbn1">장바구니1</label>
                             <input type="radio" name="pSaveGbn" id="pSaveGbn2" value="2" /><label for="pSaveGbn2">장바구니2</label>
@@ -966,31 +966,55 @@
                         </div>
                       </div>
                       <div class="wrap-grid">
-                        <div class="grid-container">
-                          <table id="GridLecture" class="custom-lecture-table">
-                            <colgroup>
-                              <col style="width: 7%;" /> <col style="width: 5%;" /> <col style="width: 7%;" /> <col style="width: 8%;" /> <col style="width: 18%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 15%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 6%;" /> <col style="width: 6%;" />
-                            </colgroup>
-                            <thead>
-                              <tr>
-                                <th>신청</th>
-                                <th>구분</th>
-                                <th>코드</th>
-                                <th>이수구분</th>
-                                <th>과목명</th>
-                                <th>학점</th>
-                                <th>주야</th>
-                                <th>강의시간</th>
-                                <th>복1</th>
-                                <th>복2</th>
-                                <th>부</th>
-                                <th>분반</th>
-                                <th>재수강</th>
-                                <th>이관여부</th>
-                              </tr>
-                            </thead>
-                            <tbody id="lectureBody"></tbody>
-                          </table>
+                        <!-- 여기는 상단 그리드 -->
+                        <div class="wrap-grid">
+                          <div class="grid-container">
+                            <table id="GridFixed" class="custom-lecture-table">
+                              <colgroup>
+                                <col style="width: 7%;" /> <col style="width: 5%;" /> <col style="width: 7%;" /> <col style="width: 8%;" /> <col style="width: 18%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 15%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 6%;" /> <col style="width: 6%;" />
+                              </colgroup>
+                              <thead>
+                                <tr>
+                                  <th>신청</th>
+                                  <th>구분</th>
+                                  <th>코드</th>
+                                  <th>이수구분</th>
+                                  <th>과목명</th>
+                                  <th>학점</th>
+                                  <th>주야</th>
+                                  <th>강의시간</th>
+                                  <th>복1</th>
+                                  <th>복2</th>
+                                  <th>부</th>
+                                  <th>분반</th>
+                                  <th>재수강</th>
+                                  <th>이관여부</th>
+                                </tr>
+                              </thead>
+                              <tbody id="fixedBody">
+                                <tr>
+                                  <td>
+                                    <button type="button" class="btn-apply" onclick="applyFromFixed('2055', '데이터베이스 실무', '교양', '핵심', '화4,5,6', '02')">신청</button>
+                                  </td>
+                                  <td>교양</td>
+                                  <td>
+                                    <button type="button" class="btn-sm is-blue-dark" style="cursor:pointer;color:#fff;font-weight:bold;font-size:11px;">2055</button>
+                                  </td>
+                                  <td>핵심</td>
+                                  <td class="text-left">데이터베이스 실무</td>
+                                  <td>3</td>
+                                  <td>주</td>
+                                  <td class="text-left">화4,5,6(정보관 102)</td>
+                                  <td>N</td>
+                                  <td>N</td>
+                                  <td>N</td>
+                                  <td>02</td>
+                                  <td>N</td>
+                                  <td>N</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1027,216 +1051,32 @@
                   </div>
                 </div>
                 <div class="wrap-grid">
-                  <div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_GridBasket" dir="ltr" style="width: 1200px;">
-                    <div class="ui-widget-overlay jqgrid-overlay" id="lui_GridBasket"></div>
-                    <div class="loading ui-state-default ui-state-active" id="load_GridBasket" style="display: none;">Loading ...</div>
-                    <div class="ui-jqgrid-view" role="grid" id="gview_GridBasket" style="width: 1200px;">
-                      <div class="ui-jqgrid-titlebar ui-jqgrid-caption ui-widget-header ui-corner-top ui-helper-clearfix" style="display: none;">
-                        <a role="link" class="ui-jqgrid-titlebar-close ui-corner-all HeaderButton" style="right: 0px;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title"></span>
-                      </div>
-                      <div class="ui-state-default ui-jqgrid-hdiv ui-corner-top" style="width: 1200px;">
-                        <div class="ui-jqgrid-hbox">
-                          <table class="ui-jqgrid-htable ui-common-table" style="width: 1200px;" role="presentation" aria-labelledby="gbox_GridBasket">
-                            <thead>
-                              <tr class="ui-jqgrid-labels" role="row">
-                                <th id="GridBasket_MODE" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 20px; display: none;" title="신청">
-                                  <div id="jqgh_GridBasket_MODE" class="ui-jqgrid-sortable">
-                                    신청<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_MODE_DEL" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 85px;" title="삭제">
-                                  <div id="jqgh_GridBasket_MODE_DEL" class="ui-jqgrid-sortable">
-                                    삭제<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SAVE_GBN_NM" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 85px;" title="구분">
-                                  <div id="jqgh_GridBasket_SAVE_GBN_NM" class="ui-jqgrid-sortable">
-                                    구분<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SUGANG_NO_VIEW" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 64px;" title="코드">
-                                  <div id="jqgh_GridBasket_SUGANG_NO_VIEW" class="ui-jqgrid-sortable">
-                                    코드<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_HAKSU_GBN" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 64px;" title="이수구분">
-                                  <div id="jqgh_GridBasket_HAKSU_GBN" class="ui-jqgrid-sortable">
-                                    이수구분<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_GWAMOK_NM" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 191px;" title="과목명">
-                                  <div id="jqgh_GridBasket_GWAMOK_NM" class="ui-jqgrid-sortable">
-                                    과목명<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_HAKJUM1" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="학점">
-                                  <div id="jqgh_GridBasket_HAKJUM1" class="ui-jqgrid-sortable">
-                                    학점<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_JUYA_FG" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="주야">
-                                  <div id="jqgh_GridBasket_JUYA_FG" class="ui-jqgrid-sortable">
-                                    주야<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SIGAN_CONT" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 255px;" title="강의시간">
-                                  <div id="jqgh_GridBasket_SIGAN_CONT" class="ui-jqgrid-sortable">
-                                    강의시간<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_BOK1_CD" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="복1">
-                                  <div id="jqgh_GridBasket_BOK1_CD" class="ui-jqgrid-sortable">
-                                    복1<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_BOK2_CD" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="복2">
-                                  <div id="jqgh_GridBasket_BOK2_CD" class="ui-jqgrid-sortable">
-                                    복2<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_BU_CD" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="부">
-                                  <div id="jqgh_GridBasket_BU_CD" class="ui-jqgrid-sortable">
-                                    부<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_DF_FG" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 51px;" title="분반">
-                                  <div id="jqgh_GridBasket_DF_FG" class="ui-jqgrid-sortable">
-                                    분반<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_JAESUGANG_FG" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 42px;" title="재수강">
-                                  <div id="jqgh_GridBasket_JAESUGANG_FG" class="ui-jqgrid-sortable">
-                                    재수강<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_TRANSFER_GBN_NM" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 83px;" title="이관여부">
-                                  <div id="jqgh_GridBasket_TRANSFER_GBN_NM" class="ui-jqgrid-sortable">
-                                    이관여부<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_PARAMS" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;">
-                                  <div id="jqgh_GridBasket_PARAMS" class="ui-jqgrid-sortable">
-                                    PARAMS<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SU_CNT" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 0px; display: none;">
-                                  <div id="jqgh_GridBasket_SU_CNT" class="ui-jqgrid-sortable">
-                                    SU_CNT<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_ORDER" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;">
-                                  <div id="jqgh_GridBasket_ORDER" class="ui-jqgrid-sortable">
-                                    ORDER<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SUGANG_NO" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;">
-                                  <div id="jqgh_GridBasket_SUGANG_NO" class="ui-jqgrid-sortable">
-                                    SUGANG_NO<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_SAVE_GBN" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;">
-                                  <div id="jqgh_GridBasket_SAVE_GBN" class="ui-jqgrid-sortable">
-                                    SAVE_GBN<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                                <th id="GridBasket_TRANSFER_GBN" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;">
-                                  <div id="jqgh_GridBasket_TRANSFER_GBN" class="ui-jqgrid-sortable">
-                                    TRANSFER_GBN<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
-                                  </div>
-                                </th>
-                              </tr>
-                            </thead>
-                          </table>
-                        </div>
-                      </div>
-                      <div class="ui-jqgrid-bdiv" style="height: 100%; width: 1200px;">
-                        <div style="position:relative;">
-                          <div class=""></div>
-                          <table id="GridBasket" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="presentation" aria-multiselectable="false" aria-labelledby="gbox_GridBasket" class="ui-jqgrid-btable" style="width: 1200px;">
-                            <tbody>
-                              <tr class="jqgfirstrow" role="row" style="height:auto">
-                                <td role="gridcell" style="height:0px;width:20px;display:none;"></td>
-                                <td role="gridcell" style="height: 0px; width: 85px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 85px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 64px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 64px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 191px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 255px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 51px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 42px;"></td>
-                                <td role="gridcell" style="height: 0px; width: 83px;"></td>
-                                <td role="gridcell" style="height:0px;width:150px;display:none;"></td>
-                                <td role="gridcell" style="height:0px;width:0px;display:none;"></td>
-                                <td role="gridcell" style="height:0px;width:150px;display:none;"></td>
-                                <td role="gridcell" style="height:0px;width:150px;display:none;"></td>
-                                <td role="gridcell" style="height:0px;width:150px;display:none;"></td>
-                                <td role="gridcell" style="height:0px;width:150px;display:none;"></td>
-                              </tr>
-                              <tr role="row" id="1" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr" style="background-color: rgb(217, 245, 246);">
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_MODE">&nbsp;</td>
-                                <td role="gridcell" style="" title="삭제" aria-describedby="GridBasket_MODE_DEL">
-                                  <button type="button" class="btn-sub btn-mode">삭제</button>
-                                </td>
-                                <td role="gridcell" style="" title="장바구니1" aria-describedby="GridBasket_SAVE_GBN_NM">장바구니1</td>
-                                <td role="gridcell" style="" title="1051" aria-describedby="GridBasket_SUGANG_NO_VIEW">
-                                  <button type="button" class="btn-sm is-blue-dark" title="클릭하여 강의계획서 확인" style="cursor:pointer;color:#fff;font-weight:bold;font-size:11px;" onclick="fnPlanPop('1051') ">1051</button>
-                                </td>
-                                <td role="gridcell" style="" title="균형" aria-describedby="GridBasket_HAKSU_GBN">균형</td>
-                                <td role="gridcell" style="text-align:left;" title="고대그리스철학" aria-describedby="GridBasket_GWAMOK_NM">고대그리스철학</td>
-                                <td role="gridcell" style="" title="3" aria-describedby="GridBasket_HAKJUM1">3</td>
-                                <td role="gridcell" style="" title="주" aria-describedby="GridBasket_JUYA_FG">주</td>
-                                <td role="gridcell" style="text-align:left;" title="DU∼MOOC" aria-describedby="GridBasket_SIGAN_CONT">DU∼MOOC</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BOK1_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BOK2_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BU_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_DF_FG">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_JAESUGANG_FG">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_TRANSFER_GBN_NM">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="1051" aria-describedby="GridBasket_PARAMS">1051</td>
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_SU_CNT">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_ORDER">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="1051" aria-describedby="GridBasket_SUGANG_NO">1051</td>
-                                <td role="gridcell" style="display:none;" title="1" aria-describedby="GridBasket_SAVE_GBN">1</td>
-                                <td role="gridcell" style="display:none;" title="N" aria-describedby="GridBasket_TRANSFER_GBN">N</td>
-                              </tr>
-                              <tr role="row" id="2" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr ui-priority-secondary" style="background-color: rgb(217, 245, 246);">
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_MODE">&nbsp;</td>
-                                <td role="gridcell" style="" title="삭제" aria-describedby="GridBasket_MODE_DEL">
-                                  <button type="button" class="btn-sub btn-mode">삭제</button>
-                                </td>
-                                <td role="gridcell" style="" title="장바구니1" aria-describedby="GridBasket_SAVE_GBN_NM">장바구니1</td>
-                                <td role="gridcell" style="" title="1065" aria-describedby="GridBasket_SUGANG_NO_VIEW">
-                                  <button type="button" class="btn-sm is-blue-dark" title="클릭하여 강의계획서 확인" style="cursor:pointer;color:#fff;font-weight:bold;font-size:11px;" onclick="fnPlanPop('1065') ">1065</button>
-                                </td>
-                                <td role="gridcell" style="" title="균형" aria-describedby="GridBasket_HAKSU_GBN">균형</td>
-                                <td role="gridcell" style="text-align:left;" title="뮤지컬의이해와감상" aria-describedby="GridBasket_GWAMOK_NM">뮤지컬의이해와감상</td>
-                                <td role="gridcell" style="" title="3" aria-describedby="GridBasket_HAKJUM1">3</td>
-                                <td role="gridcell" style="" title="주" aria-describedby="GridBasket_JUYA_FG">주</td>
-                                <td role="gridcell" style="text-align:left;" title="금(13:30∼14:45) 금(15:00∼16:15)" aria-describedby="GridBasket_SIGAN_CONT">금(13:30∼14:45) 금(15:00∼16:15)</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BOK1_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BOK2_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_BU_CD">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_DF_FG">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_JAESUGANG_FG">&nbsp;</td>
-                                <td role="gridcell" style="" title="" aria-describedby="GridBasket_TRANSFER_GBN_NM">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="1065" aria-describedby="GridBasket_PARAMS">1065</td>
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_SU_CNT">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="" aria-describedby="GridBasket_ORDER">&nbsp;</td>
-                                <td role="gridcell" style="display:none;" title="1065" aria-describedby="GridBasket_SUGANG_NO">1065</td>
-                                <td role="gridcell" style="display:none;" title="1" aria-describedby="GridBasket_SAVE_GBN">1</td>
-                                <td role="gridcell" style="display:none;" title="N" aria-describedby="GridBasket_TRANSFER_GBN">N</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ui-jqgrid-resize-mark" id="rs_mGridBasket">&nbsp;</div>
+                  <!-- 하단 -->
+                  <div class="grid-container">
+                    <table id="GridLecture" class="custom-lecture-table">
+                      <colgroup>
+                        <col style="width: 7%;" /> <col style="width: 5%;" /> <col style="width: 7%;" /> <col style="width: 8%;" /> <col style="width: 18%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 15%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 4%;" /> <col style="width: 6%;" /> <col style="width: 6%;" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th>신청</th>
+                          <th>구분</th>
+                          <th>코드</th>
+                          <th>이수구분</th>
+                          <th>과목명</th>
+                          <th>학점</th>
+                          <th>주야</th>
+                          <th>강의시간</th>
+                          <th>복1</th>
+                          <th>복2</th>
+                          <th>부</th>
+                          <th>분반</th>
+                          <th>재수강</th>
+                          <th>이관여부</th>
+                        </tr>
+                      </thead>
+                      <tbody id="lectureBody"></tbody>
+                    </table>
                   </div>
                 </div>
                 <div class="form-search mt-10">
@@ -1251,7 +1091,7 @@
                 </div>
                 <!-- <span class="btn-control" id="btnControlB"></span> -->
               </div>
-              <!--                                       대구대학교 요청으로 미니시간표 삭제 - 20260116
+              <!--                                                         대구대학교 요청으로 미니시간표 삭제 - 20260116
     <div class="col-fix" style="width:180px" id="rightFrameB">
         <div class="sw-header">
             <div class="actions">
@@ -1289,7 +1129,7 @@
         </div>
         <table class="tbl-time" id="timeTableB"></table>
     </div>
-                                          -->
+                                                            -->
             </div>
 
             <script type="text/javascript" src="./static/js/fn-common.min.js?1768957392022"></script>
@@ -1339,10 +1179,10 @@
       let lang = 'ko'
     </script>
 
-    <!--                 <script src="./static/js/fn-fp.min.js" type="text/javascript"></script>
+    <!--                                   <script src="./static/js/fn-fp.min.js" type="text/javascript"></script>
     <script src="./static/js/fn-home.min.js" type="text/javascript"></script>
     <script src="./static/js/fn-env.min.js" type="text/javascript"></script>
-    <script src="./static/js/fn-infomation.min.js" type="text/javascript"></script>                -->
+    <script src="./static/js/fn-infomation.min.js" type="text/javascript"></script>                                  -->
     <script src="./static/js/custom_grid_up.js" type="text/javascript"></script>
 
     <script type="module" src="./static/js/fn-basket.min.js"></script>

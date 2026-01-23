@@ -1,10 +1,40 @@
-/* 부모 컨테이너: 가로 스크롤 억제 */
+/* 부모 컨테이너: 높이를 고정하여 5행까지만 노출 */
 .grid-container {
     width: 100%;
+    max-height: 184px;
+    /* 헤더(34px) + 5개 행(30px * 5) = 184px */
+    overflow-y: auto;
+    /* 세로 스크롤 활성화 */
+    overflow-x: hidden;
+    /* 가로 스크롤 억제 */
     border-top: 2px solid #007b8b;
-    /* 이미지 상단 포인트 컬러 */
     border-left: 1px solid #d1d1d1;
     border-right: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+/* 스크롤바 디자인 (선택 사항: 더 깔끔하게 보이기 위함) */
+.grid-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.custom-lecture-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    /* 가로 고정 유지 */
+}
+
+/* 헤더 고정 (스크롤해도 제목은 보이게) */
+.custom-lecture-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .custom-lecture-table {
@@ -51,4 +81,26 @@
     padding: 3px 8px;
     border-radius: 2px;
     cursor: pointer;
+}
+
+/* 두 테이블 모두에 적용되는 공통 CSS */
+.custom-lecture-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.custom-lecture-table th {
+    background-color: #f1f1f5;
+    height: 34px;
+    font-size: 11px;
+    border: 1px solid #d1d1d1;
+}
+
+.custom-lecture-table td {
+    height: 30px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    font-size: 12px;
 }
