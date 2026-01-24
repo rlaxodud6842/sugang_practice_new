@@ -139,17 +139,22 @@ window.handleFastApply = function () {
         HAKJUM: "3",
         GWAMOK_GBN: "주",
         SIGAN_CONT: timeInfo.text,
-        BOK1: "N", BOK2: "N", BU: "N",
-        DF_FG: "01",
-        RE_SUGANG: "N",
-        TRANS_YN: "N"
+        BOK1: "", BOK2: "", BU: "",
+        DF_FG: "",
+        RE_SUGANG: "",
+        TRANS_YN: ""
     };
 
     // 5. 저장 및 갱신
     list.push(newItem);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
 
-    if (typeof window.renderGrid === 'function') window.renderGrid();
+    if (typeof window.renderGrid === 'function') {
+        window.updateGridCount();
+        window.updateGridStats();
+        window.renderGrid();
+    }
+
 
     alert("수강신청이 성공적으로 저장되었습니다!")
 
@@ -172,43 +177,13 @@ window.renderGrid = function () {
         <tr>
             <td><button type="button" class="btn-sub btn-mode" onclick="deleteLecture('${item.SUGANG_NO}')">삭제</button></td>
             <td>${item.HAKSU_GBN || '전공'}</td> <td><button type="button" class="btn-sm is-blue-dark" style = "cursor:pointer;color:#fff;font-weight:bold;font-size:11px;">${item.SUGANG_NO}</button></td> <td>${item.GYO_GBN_NM || '전필'}</td> <td class="text-left" title="${item.GWAMOK_NM}">${item.GWAMOK_NM}</td> <td>${item.HAKJUM || '3'}</td> <td>${item.GWAMOK_GBN || '주'}</td> <td class="text-left">${item.SIGAN_CONT || ''}</td> <td>${item.BOK1 || ''}</td> <td>${item.BOK2 || ''}</td> 
-            <td>${item.BU || ''}</td>   <td>${item.DF_FG || '01'}</td> <td>${item.RE_SUGANG || 'N'}</td> <td>${item.TRANS_YN || 'N'}</td> </tr>
+            <td>${item.BU || ''}</td>   <td>${item.DF_FG || ''}</td> <td>${item.RE_SUGANG || ''}</td> <td>${item.TRANS_YN || ''}</td> </tr>
     `).join('');
+
+    window.updateGridCount();
+    window.updateGridStats();
+
 };
-// 2. 버튼 클릭 시 실행될 함수
-function handleFastApply() {
-    const codeInput = document.getElementById('pGwamokCd');
-    const code = codeInput.value.trim();
-
-    if (code.length !== 4) {
-        alert("수강번호 4자리를 입력해주세요.");
-        return;
-    }
-
-    // 데이터 생성
-    const newItem = {
-        SUGANG_NO: code,
-        GWAMOK_NM: "신규 등록 과목",
-        HAKSU_GBN: "전공", HAKNYUN: "1", GWAMOK_GBN: "주", GYO_GBN_NM: "일반",
-        HAKJUM: "3", PROF_NM: "담당교수", SIGAN_CONT: "시간미정", DAESANG_HAKGWA: "전체",
-        JEHAN_INWON: "99", BOK1: "", BOK2: "", BU: "", DF_FG: "01", RE_SUGANG: "N", TRANS_YN: "N"
-    };
-
-    // 로컬 스토리지 저장
-    let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
-    if (list.some(i => i.SUGANG_NO === code)) {
-        alert("이미 신청된 번호입니다.");
-        return;
-    }
-
-    list.push(newItem);
-    localStorage.setItem('custom_lecture_data', JSON.stringify(list));
-
-    // 그리드 갱신
-    renderGrid();
-    codeInput.value = "";
-    codeInput.focus();
-}
 
 // 3. 삭제 함수
 function deleteLecture(code) {
@@ -218,10 +193,16 @@ function deleteLecture(code) {
     }
     list = list.filter(i => i.SUGANG_NO !== code);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
+    window.updateGridCount();
+    window.updateGridStats();
+
     renderGrid();
 }
 
-window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
+window.applyFromFixed = function (code, name, gubun, isu, time) {
+    if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
+        return; // '취소' 클릭 시 함수 종료
+    }
     // 1. 신청 의사 확인
 
     // 1. 전달받은 인자로 데이터 객체 생성
@@ -233,9 +214,9 @@ window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
         HAKJUM: "3",           // 기본값 (필요시 인자로 추가 가능)
         GWAMOK_GBN: "주",       // 주야
         SIGAN_CONT: time,      // 강의시간
-        BOK1: "N", BOK2: "N", BU: "N",
-        DF_FG: bunban,         // 분반
-        RE_SUGANG: "N",
+        BOK1: "", BOK2: "", BU: "",
+        DF_FG: "",         // 분반
+        RE_SUGANG: "",
         TRANS_YN: "N"
     };
 
@@ -254,13 +235,47 @@ window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
 
     // 3. 하단 커스텀 그리드 갱신
     if (typeof window.renderGrid === 'function') {
+        window.updateGridCount();
+        window.updateGridStats();
         window.renderGrid();
     }
 };
 
 
-
+window.updateGridCount = function () {
+    const countElement = document.getElementById('GridBasketMiniCnt');
+    if (countElement) {
+        // 로컬스토리지에서 데이터를 가져와 개수 확인
+        const list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
+        countElement.innerText = list.length; // 숫자 업데이트
+    }
+};
 // ... (기존 window.handleFastApply 등 함수 정의 코드 뒤에 추가)
+
+window.updateGridStats = function () {
+    // 1. 요소 가져오기
+    const countElement = document.getElementById('GridBasketMiniCnt');
+    const sumElement = document.getElementById('GridBasketSum');
+
+    // 2. 로컬스토리지 데이터 가져오기
+    const list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
+
+    // 3. 신청 과목 수 업데이트
+    if (countElement) {
+        countElement.innerText = list.length;
+    }
+
+    // 4. 총 학점 합산 업데이트
+    if (sumElement) {
+        const totalHakjum = list.reduce((acc, item) => {
+            // HAKJUM 값이 문자열일 수 있으므로 숫자로 변환 (값이 없으면 0)
+            const score = parseInt(item.HAKJUM) || 0;
+            return acc + score;
+        }, 0);
+
+        sumElement.innerText = totalHakjum;
+    }
+};
 
 // 1. 강제 호출
 window.renderGrid();
