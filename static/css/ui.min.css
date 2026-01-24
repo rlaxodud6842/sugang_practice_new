@@ -941,7 +941,6 @@ textarea {
     position: relative;
     touch-action: manipulation;
     cursor: pointer;
-    selector-dummy: expression(this.hideFocus=true);
     overflow: hidden;
     height: 25px;
     margin-left: -1px;
@@ -999,7 +998,6 @@ input[type=submit] {
     touch-action: manipulation;
     outline: 0;
     cursor: pointer;
-    selector-dummy: expression(this.hideFocus=true);
     overflow: hidden;
     box-sizing: border-box;
     display: inline-flex;

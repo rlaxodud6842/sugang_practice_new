@@ -41,7 +41,7 @@
           </div>
           <div class="is-right">
             <div class="user-name" style="font-weight: bold">
-              김태영(<span>22028137</span>)
+              김두두(<span>12344321</span>)
               <span class="split"></span>
               최대신청가능학점 :<em>19</em>
               <span class="split"></span>
@@ -49,30 +49,30 @@
               <span class="split"></span>
             </div>
             <div class="timer" style="display: none;">
-              <span id="timerRemain">09:37</span>
+              <span id="timerRemain">09:45</span>
               <button type="button" id="btnTimer" onclick="javascript:extendTimer('reload');">연장하기</button>
             </div>
-            <!--          
+            <!--                                                                                        
 						<div class="radio-group" style="margin-right: 20px;">
 							<input type="radio" name="lang" id="kor" value="ko" onClick="fnLang('ko')" checked><label for="kor">한국어</label>
 							<input type="radio" name="lang" id="eng" value="en" onClick="fnLang('en')" ><label for="eng">English</label>
 						</div>
-					          -->
+					                                                                                        -->
             <button type="button" class="btn-del btn-md" onclick="location.href='/'">로그아웃</button>
             <!-- 학생정보 레이어 -->
-            <div class="layer-user" id="layer-user-id" style="display: block;">
+            <div class="layer-user" id="layer-user-id" style="display: none z-index: 5000;">
               <ul>
                 <li>
                   <label>학번</label>
-                  <span>22028137</span>
+                  <span>12344321</span>
                 </li>
                 <li>
                   <label>성명</label>
-                  <span>김태영</span>
+                  <span>김두두</span>
                 </li>
                 <li>
                   <label>전공</label>
-                  <span>AI학과</span>
+                  <span>카다이프 학과</span>
                 </li>
                 <li>
                   <label>학년</label>
@@ -96,9 +96,9 @@
                 </li>
                 <li>
                   <label>이전접속시간</label>
-                  <span>2026-01-21 09:43</span>
+                  <span>2026-01-21 10:02</span>
                 </li>
-                <!--          <li>
+                <!--                                                                                        <li>
 								<label>
 									<button type="button" class="btn-main" onclick="javascript:fnGoMoveUserInfo('detail');">상세보기</button>
 								</label>
@@ -106,7 +106,7 @@
 								<span>
 									<button type="button" class="btn-sub" onclick="javascript:fnGoMoveUserInfo('close');">닫기</button>
 								</span>
-							</li>           -->
+							</li>                                                                                         -->
               </ul>
             </div>
           </div>
@@ -133,10 +133,10 @@
               <span>수강신청</span>
             </li>
 
-            <!--          <li onClick="fnSurvey();">
+            <!--              <li onClick="fnSurvey();">
 						<i class="nav-icon-01"></i>
 						<span>만족도조사</span>
-					</li>          -->
+					</li>              -->
           </ul>
         </div>
         <div class="contents" id="contents">
@@ -147,9 +147,9 @@
             </ul>
             <div class="sw-tab-contents">
               <div id="tab_01" class="is-active">
-                <!--          <div class="info-box" style="padding: 5px">
+                <!--              <div class="info-box" style="padding: 5px">
 				<div id="contents_notice"><div>Loading...</div></div>
-			</div>          -->
+			</div>              -->
                 <div class="info-box">
                   <p class="info-txt is-red txt-red">복수(연계)전공 이수 안내</p>
                   <ul class="list-icon">
@@ -246,8 +246,8 @@
                   fnSetTab($(this).data('id'))
                 })
                 /*$(".sw-tabs li").click(function(e){
-                                                                                                                                            		fnSetTab($(this).data("id"));
-                                                                                                                                            	});*/
+                                                                                                                                                                                                    		fnSetTab($(this).data("id"));
+                                                                                                                                                                                                    	});*/
                 fnLoadEnd()
               })
               function fnSetTab(tabId) {
