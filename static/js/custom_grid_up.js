@@ -213,6 +213,9 @@ function handleFastApply() {
 // 3. 삭제 함수
 function deleteLecture(code) {
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
+    if (!confirm(`[수강번호 : ${code}]  과목을 삭제 하시겠습니까?`)) {
+        return; // '취소' 클릭 시 함수 종료
+    }
     list = list.filter(i => i.SUGANG_NO !== code);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
     renderGrid();
@@ -220,9 +223,7 @@ function deleteLecture(code) {
 
 window.applyFromFixed = function (code, name, gubun, isu, time, bunban) {
     // 1. 신청 의사 확인
-    if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
+
     // 1. 전달받은 인자로 데이터 객체 생성
     const newItem = {
         SUGANG_NO: code,
