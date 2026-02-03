@@ -38,17 +38,54 @@
             <button type="submit" class="btn-login" id="btn-login">로그인</button>
           </form>
         </div>
-        <!-- <div class="list-box mb-15" style="padding-left: 180px;">
+        <!--  <div class="list-box mb-15" style="padding-left: 180px;">
 				<ul class="list-dot">
 					<li>
 						<h3 onClick="fnOpenSurvey();" style="cursor:pointer;">2020학년도 재학생 학업중단 예측검사<i class="sw-icon-link"></i></h3>
 					</li>
 				</ul>
-			</div> -->
+			</div>  -->
       </main>
       <div class="login-notice">
         <h1>수강신청 유의사항</h1>
-
+        <div class="list-box mb-15">
+          <table class="tbl-detail" style="width: 100%" boder="1">
+            <tbody>
+              <tr height="25">
+                <th rowspan="2" style="width: 25%;">
+                  수강대상자<br /> /<br /> 구분
+                </th>
+                <th colspan="2" style="width: 50%;">수강신청 과목</th>
+                <th rowspan="2" style="width: 25%;">
+                  수강신청<br />시간/장소
+                </th>
+              </tr>
+              <tr>
+                <td style="width: 30%;">
+                  ￭ 제1전공, 복수(부)전공 개설 전공 및 소속 단대 개설 공통교양·교직 (개설 학년 2-4학년)<br />
+                  ￭ 균형교양 및 자유선택 (개설 단대, 학년 제한 없음)
+                </td>
+                <td style="width: 20%;">￭ 전 교과목 (개설 학과․ 학년 제한 없음)</td>
+              </tr>
+              <tr>
+                <td class="alignC txt-red">4학년</td>
+                <td class="alignC">2.10.(화)</td>
+                <th rowspan="2" class="alignC">2.12.(목)</th>
+                <td rowspan="3" class="alignC">
+                  10:00-17:00<br />종합정보시스템<br />수강신청
+                </td>
+              </tr>
+              <tr>
+                <td class="alignC txt-red">2학년,3학년</td>
+                <td class="alignC">2.11.(수)</td>
+              </tr>
+              <tr>
+                <td class="alignC txt-bold">장애 학생</td>
+                <td colspan="2" class="alignC">2.9.(월)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="list-box mb-15">
           <ul class="list-dot">
             <!-- <li class="txt-blue">해당 시스템에서는 상시 로그인가능하며 [장바구니/수강신청] 각 메뉴진입은 해당 신청 시작시간 30분 전부터 가능합니다.</li> -->
@@ -114,32 +151,33 @@
 </html>
 
 {% if error %}
-<div class="jconfirm jconfirm-light jconfirm-open" >
-  <div class="jconfirm-bg" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);"></div>
-  <div class="jconfirm-scrollpane">
-    <div class="jconfirm-row">
-      <div class="jconfirm-cell">
-        <div class="jconfirm-holder" style="padding-top: 40px; padding-bottom: 40px;">
-          <div class="jc-bs3-container">
-            <div class="jc-bs3-row">
-              <div class="jconfirm-box-container jconfirm-animated jconfirm-no-transition" style="transform: translate(0px, 0px); transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
-                <div class="jconfirm-box jconfirm-hilight- jconfirm-type-default" role="dialog" aria-labelledby="jconfirm-box83270" tabindex="-1" style="width: 420px; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1); transition-property: all, margin;">
-                  <div class="jconfirm-closeIcon" onclick="document.getElementsByClassName('jconfirm')[0].remove();" title="닫기" style="display: block;"></div>
-                  <div class="jconfirm-title-c">
-                    <span class="jconfirm-icon-c"></span><span class="jconfirm-title">알림</span>
-                  </div>
-                  <div class="jconfirm-content-pane no-scroll" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
-                    <div class="jconfirm-content" id="jconfirm-box83270">
-                      <div>
-                        <p>학번 또는 비밀번호가 잘못 되었습니다!</p>
+  <div class="jconfirm jconfirm-light jconfirm-open">
+    <div class="jconfirm-bg" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);"></div>
+    <div class="jconfirm-scrollpane">
+      <div class="jconfirm-row">
+        <div class="jconfirm-cell">
+          <div class="jconfirm-holder" style="padding-top: 40px; padding-bottom: 40px;">
+            <div class="jc-bs3-container">
+              <div class="jc-bs3-row">
+                <div class="jconfirm-box-container jconfirm-animated jconfirm-no-transition" style="transform: translate(0px, 0px); transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
+                  <div class="jconfirm-box jconfirm-hilight- jconfirm-type-default" role="dialog" aria-labelledby="jconfirm-box83270" tabindex="-1" style="width: 420px; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1); transition-property: all, margin;">
+                    <div class="jconfirm-closeIcon" onclick="document.getElementsByClassName('jconfirm')[0].remove();" title="닫기" style="display: block;"></div>
+                    <div class="jconfirm-title-c">
+                      <span class="jconfirm-icon-c"></span><span class="jconfirm-title">알림</span>
+                    </div>
+                    <div class="jconfirm-content-pane no-scroll" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
+                      <div class="jconfirm-content" id="jconfirm-box83270">
+                        <div>
+                          <p>학번 또는 비밀번호가 잘못 되었습니다!</p>
+                        </div>
                       </div>
                     </div>
+                    <div class="jconfirm-buttons">
+                      <button type="button" onclick="document.getElementsByClassName('jconfirm')[0].remove();" class="btn-main">확 인</button>
+                      <button type="button" class="btn-default" style="display: none;">x</button>
+                    </div>
+                    <div class="jconfirm-clear"></div>
                   </div>
-                  <div class="jconfirm-buttons">
-                    <button type="button" onclick="document.getElementsByClassName('jconfirm')[0].remove();" class="btn-main">확 인</button>
-					<button type="button"  class="btn-default" style="display: none;">x</button>
-                  </div>
-                  <div class="jconfirm-clear"></div>
                 </div>
               </div>
             </div>
@@ -148,5 +186,4 @@
       </div>
     </div>
   </div>
-</div>
 {% endif %}
