@@ -52,12 +52,36 @@ function generateRandomTime() {
     };
 }
 
+function showError({ message, focus, clear }) {
+    const box = document.getElementById("jconfirm-box83270");
+    const p = box.querySelector("p");
+
+    p.textContent = message;
+    box.style.display = "block";
+
+    if (clear && focus) {
+        document.getElementById(focus).value = "";
+    }
+
+    if (focus) {
+        document.getElementById(focus).focus();
+    }
+}
+
+function closeConfirm() {
+    const modal = document.getElementsByClassName('jconfirm')[0];
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 // 시간을 분 단위 숫자로 변환 (예: "13:30" -> 810)
 function timeToMin(timeStr) {
     const [hh, mm] = timeStr.split(':').map(Number);
     return hh * 60 + mm;
 }
-window.handleFastApply = function () {
+window.handleFastApply = function() {
     const codeInput = document.getElementById('pGwamokCd');
     const inputCode = codeInput.value.trim(); // 입력된 값 (예: '2026', '7777' 등)
 
@@ -65,27 +89,27 @@ window.handleFastApply = function () {
     const isNumeric = /^[0-9]+$/.test(inputCode); // 숫자 체크 정규식
 
     if (!inputCode) {
-        alert("수강번호를 입력해주세요.");
-        codeInput.focus();
+        showError({
+            message: "수강번호를 입력해주세요.",
+            focus: "pGwamokCd"
+        });
         return;
     }
 
     if (!isNumeric) {
-        alert("수강번호는 숫자만 입력 가능합니다.");
-        codeInput.value = "";
-        codeInput.focus();
+        showError({
+            message: "수강번호는 숫자만 입력 가능합니다.",
+            focus: "pGwamokCd",
+            clear: true
+        });
         return;
     }
 
     if (inputCode.length > 4) {
-        alert("수강번호는 최대 4자리까지만 입력 가능합니다.");
-        codeInput.focus();
-        return;
-    }
-
-    if (!inputCode) {
-        alert("수강번호를 입력해주세요.");
-        codeInput.focus();
+        showError({
+            message: "수강번호는 최대 4자리까지만 입력 가능합니다.",
+            focus: "pGwamokCd"
+        });
         return;
     }
 
@@ -132,14 +156,16 @@ window.handleFastApply = function () {
 
     // 4. 입력값 기반 데이터 객체 생성
     const newItem = {
-        SUGANG_NO: inputCode,         // ★ 사용자가 입력한 값을 그대로 사용
+        SUGANG_NO: inputCode, // ★ 사용자가 입력한 값을 그대로 사용
         GWAMOK_NM: randomCourse.name, // 이름은 힙하게 랜덤 배정
         HAKSU_GBN: "전공",
         GYO_GBN_NM: "전선",
         HAKJUM: "3",
         GWAMOK_GBN: "주",
         SIGAN_CONT: timeInfo.text,
-        BOK1: "", BOK2: "", BU: "",
+        BOK1: "",
+        BOK2: "",
+        BU: "",
         DF_FG: "",
         RE_SUGANG: "",
         TRANS_YN: ""
@@ -163,7 +189,7 @@ window.handleFastApply = function () {
     codeInput.focus();
 };
 // 1. 데이터 화면 출력 함수 (customgrid_1.0 스타일)
-window.renderGrid = function () {
+window.renderGrid = function() {
     const data = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
     const tbody = document.getElementById('lectureBody');
     if (!tbody) return;
@@ -199,7 +225,7 @@ function deleteLecture(code) {
     renderGrid();
 }
 
-window.applyFromFixed = function (code, name, gubun, isu, time) {
+window.applyFromFixed = function(code, name, gubun, isu, time) {
     if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
         return; // '취소' 클릭 시 함수 종료
     }
@@ -209,13 +235,15 @@ window.applyFromFixed = function (code, name, gubun, isu, time) {
     const newItem = {
         SUGANG_NO: code,
         GWAMOK_NM: name,
-        HAKSU_GBN: gubun,      // 구분
-        GYO_GBN_NM: isu,       // 이수구분
-        HAKJUM: "3",           // 기본값 (필요시 인자로 추가 가능)
-        GWAMOK_GBN: "주",       // 주야
-        SIGAN_CONT: time,      // 강의시간
-        BOK1: "", BOK2: "", BU: "",
-        DF_FG: "",         // 분반
+        HAKSU_GBN: gubun, // 구분
+        GYO_GBN_NM: isu, // 이수구분
+        HAKJUM: "3", // 기본값 (필요시 인자로 추가 가능)
+        GWAMOK_GBN: "주", // 주야
+        SIGAN_CONT: time, // 강의시간
+        BOK1: "",
+        BOK2: "",
+        BU: "",
+        DF_FG: "", // 분반
         RE_SUGANG: "",
         TRANS_YN: "N"
     };
@@ -242,7 +270,7 @@ window.applyFromFixed = function (code, name, gubun, isu, time) {
 };
 
 
-window.updateGridCount = function () {
+window.updateGridCount = function() {
     const countElement = document.getElementById('GridBasketMiniCnt');
     if (countElement) {
         // 로컬스토리지에서 데이터를 가져와 개수 확인
@@ -252,7 +280,7 @@ window.updateGridCount = function () {
 };
 // ... (기존 window.handleFastApply 등 함수 정의 코드 뒤에 추가)
 
-window.updateGridStats = function () {
+window.updateGridStats = function() {
     // 1. 요소 가져오기
     const countElement = document.getElementById('GridBasketMiniCnt');
     const sumElement = document.getElementById('GridBasketSum');
@@ -282,8 +310,7 @@ window.renderGrid();
 
 // 2. 만약의 경우를 대비해 jQuery가 있다면 한번 더 호출
 if (window.jQuery) {
-    $(document).ready(function () {
+    $(document).ready(function() {
         window.renderGrid();
     });
 }
-
