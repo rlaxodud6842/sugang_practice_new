@@ -53,11 +53,11 @@ function generateRandomTime() {
 }
 
 function showError({ message, focus, clear }) {
-    const box = document.getElementById("jconfirm-box83270");
-    const p = box.querySelector("p");
+    const jconfirm = document.querySelector('.jconfirm');
+    const p = jconfirm.querySelector("p");
 
     p.textContent = message;
-    box.style.display = "block";
+    jconfirm.style.display = "block";
 
     if (clear && focus) {
         document.getElementById(focus).value = "";
