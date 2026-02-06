@@ -7,8 +7,8 @@ app = Flask(__name__)
 def login():
     if request.method == "POST":
         # 나중에 여기서 localStorage + 로그인 검증 예정
-        print(request.form)
-        
+        user_ip = request.remote_addr
+        print("접속 IP:", user_ip)
         if(request.form.get("txtUserID") == "12341234" and request.form.get("txtPwd") == "12341234"):
             return redirect(url_for("basic"))
         else:
