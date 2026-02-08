@@ -1812,67 +1812,67 @@ i[class^=sw-icon].hidden {
 }
 
 i.sw-icon-check {
-    background-image: url(../img/contents/icon-check.png)
+    background-image: url(./static/img/contents/icon-check.png)
 }
 
 i.sw-icon-view {
-    background-image: url(../img/contents/icon-view.png);
+    background-image: url(./static/img/contents/icon-view.png);
     height: 21px
 }
 
 i.sw-icon-print {
-    background-image: url(../img/contents/icon-print.png)
+    background-image: url(./static/img/contents/icon-print.png)
 }
 
 i.sw-icon-doc {
-    background-image: url(../img/contents/icon-doc.png);
+    background-image: url(./static/img/contents/icon-doc.png);
     width: 12px
 }
 
 i.sw-icon-pc {
-    background-image: url(../img/icon-pc.png);
+    background-image: url(./static/img/icon-pc.png);
     width: 21px;
     height: 19px
 }
 
 i.sw-icon-mobile {
-    background-image: url(../img/icon-mobile.png);
+    background-image: url(./static/img/icon-mobile.png);
     width: 15px;
     height: 20px
 }
 
 i.sw-icon-help {
-    background-image: url(../img/contents/icon-help.png);
+    background-image: url(./static/img/contents/icon-help.png);
     width: 15px;
     height: 15px
 }
 
 i.sw-icon-download {
-    background-image: url(../img/contents/icon-download.png);
+    background-image: url(./static/img/contents/icon-download.png);
     width: 13px;
     height: 14px
 }
 
 i.sw-icon-search {
-    background-image: url(../img/contents/icon-search.png);
+    background-image: url(./static/img/contents/icon-search.png);
     width: 12px;
     height: 12px
 }
 
 i.sw-icon-date {
-    background-image: url(../img/contents/icon-date.png);
+    background-image: url(./static/img/contents/icon-date.png);
     width: 15px;
     height: 14px
 }
 
 i.sw-icon-close {
-    background-image: url(../img/contents/icon-close.png);
+    background-image: url(./static/img/contents/icon-close.png);
     width: 7px;
     height: 7px
 }
 
 i.sw-icon-personal-info {
-    background-image: url(../img/icon-personal-info.png);
+    background-image: url(./static/img/icon-personal-info.png);
     width: 20px;
     height: 17px
 }
