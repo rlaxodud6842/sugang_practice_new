@@ -1872,7 +1872,7 @@ i.sw-icon-close {
 }
 
 i.sw-icon-personal-info {
-    background-image: url(/static/img/icon-personal-info.png);
+    background-image: url(../img/icon-personal-info.png);
     width: 20px;
     height: 17px
 }
