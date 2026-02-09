@@ -139,6 +139,14 @@
     background-color: #fafafa;
 }
 
+.confirm-btn.has-divider {
+    height: 55px;
+}
+
+.cancel-btn {
+    height: 55px;
+}
+
 
 /* 애니메이션 */
 
