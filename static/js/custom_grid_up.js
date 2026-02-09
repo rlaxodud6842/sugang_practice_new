@@ -171,7 +171,7 @@ window.renderGrid = function() {
 
     tbody.innerHTML = data.map(item => `
         <tr>
-            <td><button type="button" class="btn-sub btn-mode" onclick="deleteLecture('${item.SUGANG_NO}')">삭제</button></td>
+            <td><button type="button" class="btn-sub btn-mode" onclick="deleteLecture('${item.SUGANG_NO}', '${item.GWAMOK_NM}')">삭제</button></td>
             <td>${item.HAKSU_GBN || '전공'}</td> <td><button type="button" class="btn-sm is-blue-dark" style = "cursor:pointer;color:#fff;font-weight:bold;font-size:11px;">${item.SUGANG_NO}</button></td> <td>${item.GYO_GBN_NM || '전필'}</td> <td class="text-left" title="${item.GWAMOK_NM}">${item.GWAMOK_NM}</td> <td>${item.HAKJUM || '3'}</td> <td>${item.GWAMOK_GBN || '주'}</td> <td class="text-left">${item.SIGAN_CONT || ''}</td> <td>${item.BOK1 || ''}</td> <td>${item.BOK2 || ''}</td> 
             <td>${item.BU || ''}</td>   <td>${item.DF_FG || ''}</td> <td>${item.RE_SUGANG || ''}</td> <td>${item.TRANS_YN || ''}</td> </tr>
     `).join('');
@@ -182,11 +182,11 @@ window.renderGrid = function() {
 };
 
 // 3. 삭제 함수
-function deleteLecture(code) {
+function deleteLecture(code, name) {
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
-    if (!confirm(`[수강번호 : ${code}]  과목을 삭제 하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
+
+    CustomModal.show(`${name}<br>과목을 삭제 하시겠습니까?`)
+
     list = list.filter(i => i.SUGANG_NO !== code);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
     window.updateGridCount();
@@ -217,6 +217,17 @@ window.applyFromFixed = async function(code, name, gubun, isu, time) {
     // 2. 로컬 스토리지 저장 로직
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
 
+
+    // ★ [추가] 버튼 찾기 및 '완료' 텍스트로 교체
+    // 클래스가 btn-apply 이면서 onclick 인자에 해당 code가 포함된 버튼을 찾습니다.
+    const targetBtn = document.querySelector(`.btn-apply[onclick*="'${code}'"]`);
+
+    if (targetBtn) {
+        const parentTd = targetBtn.parentElement;
+        // 버튼을 지우고 빨간색 텍스트 삽입
+        parentTd.innerHTML = '<span style="color: red; font-weight: bold; font-size: 0.9em;">완료</span>';
+    }
+
     if (list.some(i => i.SUGANG_NO === code)) {
         await CustomModal.show("이미 하단 리스트에 신청된 과목입니다.");
         return;
@@ -225,7 +236,7 @@ window.applyFromFixed = async function(code, name, gubun, isu, time) {
     list.push(newItem);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
 
-    await CustomModal.show("수강신청이 성공적으로 저장되었습니다!");
+    await CustomModal.show("저장되었습니다!");
 
     // 3. 하단 커스텀 그리드 갱신
     if (typeof window.renderGrid === 'function') {
@@ -282,7 +293,7 @@ const CustomModal = {
 
             const sizeClass = isConfirm ? 'confirm-size' : 'alert-size';
             const bodyClass = isConfirm ? 'modal-body center' : 'modal-body';
-            const iconHtml = isConfirm ? `<div class="modal-icon">!</div>` : '';
+            const iconHtml = isConfirm ? ` < div class = "modal-icon" > ! < /div>` : '';
             const confirmBtnClass = isConfirm ? 'confirm-btn has-divider' : 'confirm-btn';
             const cancelBtnHtml = isConfirm ? `<button class="cancel-btn">취 소</button>` : '';
 
