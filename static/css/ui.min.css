@@ -675,7 +675,7 @@ select {
     outline: 0;
     box-sizing: border-box;
     padding: 0 20px 0 5px;
-    background-image: url(../../static/img/contents/bg-select.png);
+    background-image: url(../../img/contents/bg-select.png);
     background-repeat: no-repeat;
     background-position: right 8px top 50%
 }
@@ -1441,7 +1441,7 @@ button i.icon-refresh,
 input[type=button] i.icon-refresh,
 input[type=reset] i.icon-refresh,
 input[type=submit] i.icon-refresh {
-    background-image: url(../../static/img/contents/icon-refresh.png);
+    background-image: url(../../img/contents/icon-refresh.png);
     background-position-y: 0
 }
 
@@ -1452,7 +1452,7 @@ button i.icon-schedule,
 input[type=button] i.icon-schedule,
 input[type=reset] i.icon-schedule,
 input[type=submit] i.icon-schedule {
-    background-image: url(../../static/img/contents/icon-schedule.png)
+    background-image: url(../../img/contents/icon-schedule.png)
 }
 
 .button i.icon-print,
@@ -1462,7 +1462,7 @@ button i.icon-print,
 input[type=button] i.icon-print,
 input[type=reset] i.icon-print,
 input[type=submit] i.icon-print {
-    background-image: url(../../static/img/contents/icon-print.png)
+    background-image: url(../../img/contents/icon-print.png)
 }
 
 .button i.icon-download,
@@ -1473,7 +1473,7 @@ input[type=button] i.icon-download,
 input[type=reset] i.icon-download,
 input[type=submit] i.icon-download {
     width: 13px;
-    background-image: url(../../static/img/contents/icon-download.png)
+    background-image: url(../../img/contents/icon-download.png)
 }
 
 .button.btn-search,
@@ -1484,7 +1484,7 @@ input[type=button].btn-search,
 input[type=reset].btn-search,
 input[type=submit].btn-search {
     color: #fff;
-    background-image: url(../../static/img/contents/icon-search.png);
+    background-image: url(../../img/contents/icon-search.png);
     background-repeat: no-repeat;
     background-position: 12px 8px;
     padding-left: 32px
@@ -2265,79 +2265,79 @@ i[class^=sw-icon].hidden {
 }
 
 i.sw-icon-check {
-    background-image: url(../../static/img/contents/icon-check.png)
+    background-image: url(../img/contents/icon-check.png)
 }
 
 i.sw-icon-view {
-    background-image: url(../../static/img/contents/icon-view.png);
+    background-image: url(../img/contents/icon-view.png);
     height: 21px
 }
 
 i.sw-icon-print {
-    background-image: url(../../static/img/contents/icon-print.png)
+    background-image: url(../img/contents/icon-print.png)
 }
 
 i.sw-icon-doc {
-    background-image: url(../../static/img/contents/icon-doc.png);
+    background-image: url(../img/contents/icon-doc.png);
     width: 12px
 }
 
 i.sw-icon-pc {
-    background-image: url(../../static/img/layout/icon-pc.png);
+    background-image: url(../img/layout/icon-pc.png);
     width: 21px;
     height: 19px
 }
 
 i.sw-icon-mobile {
-    background-image: url(../../static/img/layout/icon-mobile.png);
+    background-image: url(../img/layout/icon-mobile.png);
     width: 15px;
     height: 20px
 }
 
 i.sw-icon-personal-info {
-    background-image: url(../../static/img/layout/icon-personal-info.png);
+    background-image: url(../img/layout/icon-personal-info.png);
     width: 20px;
     height: 17px
 }
 
 i.sw-icon-help {
-    background-image: url(../../static/img/contents/icon-help.png);
+    background-image: url(../img/contents/icon-help.png);
     width: 15px;
     height: 15px
 }
 
 i.sw-icon-download {
-    background-image: url(../../static/img/contents/icon-download.png);
+    background-image: url(../img/contents/icon-download.png);
     width: 13px;
     height: 14px
 }
 
 i.sw-icon-search {
-    background-image: url(../../static/img/contents/icon-search.png);
+    background-image: url(../img/contents/icon-search.png);
     width: 12px;
     height: 12px
 }
 
 i.sw-icon-date {
-    background-image: url(../../static/img/contents/icon-date.png);
+    background-image: url(../img/contents/icon-date.png);
     width: 15px;
     height: 14px
 }
 
 i.sw-icon-close {
-    background-image: url(../../static/img/contents/icon-close.png);
+    background-image: url(../img/contents/icon-close.png);
     width: 7px;
     height: 7px
 }
 
 i.sw-icon-circle-down-emty {
-    background-image: url(../../static/img/icon/icon-circle-down-empty.png);
+    background-image: url(../../img/icon/icon-circle-down-empty.png);
     width: 16px;
     height: 16px
 }
 
 i.sw-icon-circle-down-full {
-    background-image: url(../../static/img/icon/icon-circle-down-full.png);
+    background-image: url(../../img/icon/icon-circle-down-full.png);
     width: 16px;
     height: 16px
 }
@@ -2366,12 +2366,12 @@ i[class^=sw-alert].hidden {
 
 i.sw-alert-info:before {
     border: 2px solid #f2182e;
-    background-image: url(../../static/img/contents/alert-info.png)
+    background-image: url(../../img/contents/alert-info.png)
 }
 
 i.sw-alert-check:before {
     background-color: #475966;
-    background-image: url(../../static/img/contents/alert-check.png)
+    background-image: url(../../img/contents/alert-check.png)
 }
 
 .wrap-layer-popup {
@@ -2406,7 +2406,7 @@ i.sw-alert-check:before {
     width: 3.9rem;
     height: 3.9rem;
     border: 0;
-    background: url(../../static/img/btn-close.svg) no-repeat 50% 50%;
+    background: url(../../img/btn-close.svg) no-repeat 50% 50%;
     transition: all .2s ease-in
 }
 
@@ -3172,19 +3172,19 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-info {
-    background-image: url(../../static/img/toast-info.svg)
+    background-image: url(../../img/toast-info.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-success {
-    background-image: url(../../static/img/toast-success.svg)
+    background-image: url(../../img/toast-success.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-warning {
-    background-image: url(../../static/img/toast-warning.svg)
+    background-image: url(../../img/toast-warning.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .toast-fail {
-    background-image: url(../../static/img/toast-fail.svg)
+    background-image: url(../../img/toast-fail.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content [class^=msg-] {
@@ -3223,7 +3223,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-info:before {
-    background-image: url(../../static/img/msg-info.svg)
+    background-image: url(../../img/msg-info.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-info+.msg-txt {
@@ -3235,7 +3235,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-success:before {
-    background-image: url(../../static/img/msg-success.svg)
+    background-image: url(../../img/msg-success.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-success+.msg-txt {
@@ -3247,7 +3247,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-warning:before {
-    background-image: url(../../static/img/msg-warning.svg)
+    background-image: url(../../img/msg-warning.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-warning+.msg-txt {
@@ -3259,7 +3259,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-fail:before {
-    background-image: url(../../static/img/msg-fail.svg)
+    background-image: url(../../img/msg-fail.svg)
 }
 
 .jconfirm .jconfirm-box div.jconfirm-content-pane .jconfirm-content .msg-fail+.msg-txt {
@@ -3450,7 +3450,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm.jconfirm-type-info .jconfirm-box .jconfirm-content {
-    background-image: url(../../static/img/msg-info.svg)
+    background-image: url(../../img/msg-info.svg)
 }
 
 .jconfirm.jconfirm-type-info .jconfirm-box .jconfirm-buttons>button {
@@ -3463,7 +3463,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm.jconfirm-type-success .jconfirm-box .jconfirm-content {
-    background-image: url(../../static/img/msg-success.svg)
+    background-image: url(../../img/msg-success.svg)
 }
 
 .jconfirm.jconfirm-type-success .jconfirm-box .jconfirm-buttons>button {
@@ -3476,7 +3476,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm.jconfirm-type-warning .jconfirm-box .jconfirm-content {
-    background-image: url(../../static/img/msg-warning.svg)
+    background-image: url(../../img/msg-warning.svg)
 }
 
 .jconfirm.jconfirm-type-warning .jconfirm-box .jconfirm-buttons>button {
@@ -3489,7 +3489,7 @@ body[class*=jconfirm-no-scroll-] {
 }
 
 .jconfirm.jconfirm-type-fail .jconfirm-box .jconfirm-content {
-    background-image: url(../../static/img/msg-fail.svg)
+    background-image: url(../../img/msg-fail.svg)
 }
 
 .jconfirm.jconfirm-type-fail .jconfirm-box .jconfirm-buttons>button {
@@ -4115,7 +4115,7 @@ body.main {
     display: inline-block;
     width: 5px;
     height: 9px;
-    background: url(../../static/img/layout/icon-nav.png) no-repeat -70px 0;
+    background: url(../../img/layout/icon-nav.png) no-repeat -70px 0;
     transform: rotate(180deg);
     transition: all .3s
 }
@@ -4163,7 +4163,7 @@ body.main {
     height: 17px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    background: #f9f9f9 url(../../static/img/layout/bg-controller.png) no-repeat 21px -46px;
+    background: #f9f9f9 url(../../img/layout/bg-controller.png) no-repeat 21px -46px;
     cursor: pointer
 }
 
@@ -4367,7 +4367,7 @@ body.main {
 }
 
 .zooming button.zoom-in {
-    background-image: url(../../static/img/contents/icon-plus.png);
+    background-image: url(../../img/contents/icon-plus.png);
     border-radius: 2px 0 0 2px;
     text-indent: -9999em
 }
@@ -4378,7 +4378,7 @@ body.main {
 }
 
 .zooming button.zoom-out {
-    background-image: url(../../static/img/contents/icon-minus.png);
+    background-image: url(../../img/contents/icon-minus.png);
     border-radius: 0 2px 2px 0;
     text-indent: -9999em
 }
@@ -4426,7 +4426,7 @@ body.main {
     border-radius: 2px 0 0 2px;
     border: 1px solid rgba(0, 0, 0, .2);
     border-right: 0;
-    background: #fff url(../../static/img/contents/icon-clock.png) no-repeat 8px 8px;
+    background: #fff url(../../img/contents/icon-clock.png) no-repeat 8px 8px;
     font-size: 14px;
     line-height: 26px;
     color: #f2182e;
@@ -4560,7 +4560,7 @@ body.main {
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    background: rgba(71, 89, 102, .8) url(../../static/img/layout/icon-top.png) no-repeat 50% 50%;
+    background: rgba(71, 89, 102, .8) url(../../img/layout/icon-top.png) no-repeat 50% 50%;
     cursor: pointer;
     transition: all .2s
 }
@@ -4944,7 +4944,7 @@ table.dataTable .label-type+* {
     border: 1px solid #ccc;
     border-left-width: 0;
     border-right-width: 0;
-    background: #f2f2f2 url(../../static/img/layout/bg-controller.png) no-repeat -37px 10px;
+    background: #f2f2f2 url(../../img/layout/bg-controller.png) no-repeat -37px 10px;
     cursor: pointer
 }
 
@@ -5016,7 +5016,7 @@ table.dataTable .label-type+* {
     display: inline-block;
     width: 83px;
     height: 14px;
-    background: url(../../static/img/contents/icon-rate.png) no-repeat 0 0
+    background: url(../../img/contents/icon-rate.png) no-repeat 0 0
 }
 
 .rate[data-rate="0.0"] {

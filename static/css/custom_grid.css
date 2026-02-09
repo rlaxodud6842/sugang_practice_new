@@ -1,4 +1,5 @@
 /* 부모 컨테이너: 높이를 고정하여 5행까지만 노출 */
+
 .grid-container {
     width: 100%;
     max-height: 184px;
@@ -10,7 +11,9 @@
     border-bottom: 1px solid #d1d1d1;
 }
 
+
 /* 스크롤바 디자인 */
+
 .grid-container::-webkit-scrollbar {
     width: 6px;
 }
@@ -20,14 +23,18 @@
     border-radius: 3px;
 }
 
+
 /* 테이블 기본 설정 */
+
 .custom-lecture-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
+
 /* 헤더는 기존 스타일 유지 (건드리지 않음) */
+
 .custom-lecture-table thead {
     position: sticky;
     top: 0;
@@ -46,9 +53,12 @@
     text-align: center;
 }
 
+
 /* --- 데이터 셀 스타일 수정 시작 --- */
 
+
 /* 1. 기본 상태: 배경을 흰색(또는 투명)으로 설정 */
+
 .custom-lecture-table tbody tr {
     background-color: #ffffff;
 }
@@ -66,20 +76,27 @@
     text-overflow: ellipsis;
 }
 
+
 /* 2. 호버 상태: 마우스를 올렸을 때만 연한 하늘색 배경 적용 */
+
 .custom-lecture-table tbody tr:hover {
     background-color: #e8f8ff !important;
 }
 
+
 /* 만약 tr 배경색이 td에 가려진다면 아래처럼 작성하세요 */
+
 .custom-lecture-table tbody tr:hover td {
     background-color: #e8f8ff !important;
     cursor: pointer;
 }
 
+
 /* --- 데이터 셀 스타일 수정 끝 --- */
 
+
 /* 버튼 디자인 */
+
 .btn-apply {
     background: #2d7d52;
     color: white;
@@ -89,7 +106,9 @@
     cursor: pointer;
 }
 
+
 /* 코드 버튼 (이미지 참고용 추가) */
+
 .btn-code-blue {
     background-color: #003366;
     color: white;

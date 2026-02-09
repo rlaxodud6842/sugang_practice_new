@@ -16,4 +16,4 @@ COPY . .
 # 6. Gunicorn을 통해 실행 (포트 5000)
 # --workers 4: 동시 접속 처리를 위한 워커 수 설정
 # --bind 0.0.0.0:5000: 모든 IP에서 접속 허용
-CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:1010", "main:app"]
+CMD ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:1111", "main:app"]

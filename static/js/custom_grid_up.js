@@ -57,52 +57,48 @@ function timeToMin(timeStr) {
     const [hh, mm] = timeStr.split(':').map(Number);
     return hh * 60 + mm;
 }
-window.handleFastApply = function () {
+
+window.handleFastApply = async function() {
     const codeInput = document.getElementById('pGwamokCd');
     const inputCode = codeInput.value.trim(); // 입력된 값 (예: '2026', '7777' 등)
 
     // 1. 유효성 검사 (숫자만, 최대 4자리)
     const isNumeric = /^[0-9]+$/.test(inputCode); // 숫자 체크 정규식
 
+    // 1. 필수 입력 체크
     if (!inputCode) {
-        alert("수강번호를 입력해주세요.");
-        codeInput.focus();
+        await CustomModal.show("수강번호를 입력해주세요.");
+        inputElement.focus();
         return;
     }
 
+    // 2. 숫자 형식 체크
     if (!isNumeric) {
-        alert("수강번호는 숫자만 입력 가능합니다.");
-        codeInput.value = "";
-        codeInput.focus();
+        await CustomModal.show("수강번호는 숫자만 입력 가능합니다.");
+        inputElement.value = ""; // clear: true 로직
+        inputElement.focus();
         return;
     }
 
+    // 3. 길이 체크
     if (inputCode.length > 4) {
-        alert("수강번호는 최대 4자리까지만 입력 가능합니다.");
-        codeInput.focus();
+        await CustomModal.show("수강번호는 최대 4자리까지만 입력 가능합니다.");
+        inputElement.focus();
         return;
     }
 
-    if (!inputCode) {
-        alert("수강번호를 입력해주세요.");
-        codeInput.focus();
-        return;
-    }
-
-    // 1. 중복 체크 (수강번호 중복)
+    // 4. 중복 체크
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
     if (list.some(i => i.SUGANG_NO === inputCode)) {
-        alert("이미 신청된 수강번호입니다.");
+        await CustomModal.show("이미 신청된 수강번호입니다.");
+        inputElement.focus();
         return;
     }
+
 
     // 2. 입력된 번호에 매칭할 랜덤 과목명 생성 (MZ 테마)
     const randomCourse = courseDB[Math.floor(Math.random() * courseDB.length)];
     const timeInfo = generateRandomTime(); // 요일/시간 생성
-
-    if (!confirm(`[수강번호 : ${inputCode}] 과목을 신청하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
 
     // 3. 시간대 중복 정밀 체크
     const isOverlapped = list.some(i => {
@@ -126,20 +122,22 @@ window.handleFastApply = function () {
     });
 
     if (isOverlapped) {
-        alert(`🚨 시간표 충돌!\n새 과목 시간: ${timeInfo.text}\n다른 번호를 입력하거나 다시 시도하세요.`);
+        await CustomModal.show(`🚨 시간표 충돌!\n새 과목 시간: ${timeInfo.text}\n다른 번호를 입력하거나 다시 시도하세요.`);
         return;
     }
 
     // 4. 입력값 기반 데이터 객체 생성
     const newItem = {
-        SUGANG_NO: inputCode,         // ★ 사용자가 입력한 값을 그대로 사용
+        SUGANG_NO: inputCode, // ★ 사용자가 입력한 값을 그대로 사용
         GWAMOK_NM: randomCourse.name, // 이름은 힙하게 랜덤 배정
         HAKSU_GBN: "전공",
         GYO_GBN_NM: "전선",
         HAKJUM: "3",
         GWAMOK_GBN: "주",
         SIGAN_CONT: timeInfo.text,
-        BOK1: "", BOK2: "", BU: "",
+        BOK1: "",
+        BOK2: "",
+        BU: "",
         DF_FG: "",
         RE_SUGANG: "",
         TRANS_YN: ""
@@ -154,16 +152,14 @@ window.handleFastApply = function () {
         window.updateGridStats();
         window.renderGrid();
     }
-
-
-    alert("수강신청이 성공적으로 저장되었습니다!")
+    await CustomModal.show(`저장되었습니다!`);
 
     // 6. 입력창 초기화
     codeInput.value = "";
     codeInput.focus();
 };
 // 1. 데이터 화면 출력 함수 (customgrid_1.0 스타일)
-window.renderGrid = function () {
+window.renderGrid = function() {
     const data = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
     const tbody = document.getElementById('lectureBody');
     if (!tbody) return;
@@ -175,7 +171,7 @@ window.renderGrid = function () {
 
     tbody.innerHTML = data.map(item => `
         <tr>
-            <td><button type="button" class="btn-sub btn-mode" onclick="deleteLecture('${item.SUGANG_NO}')">삭제</button></td>
+            <td><button type="button" class="btn-sub btn-mode" onclick="deleteLecture('${item.SUGANG_NO}', '${item.GWAMOK_NM}')">삭제</button></td>
             <td>${item.HAKSU_GBN || '전공'}</td> <td><button type="button" class="btn-sm is-blue-dark" style = "cursor:pointer;color:#fff;font-weight:bold;font-size:11px;">${item.SUGANG_NO}</button></td> <td>${item.GYO_GBN_NM || '전필'}</td> <td class="text-left" title="${item.GWAMOK_NM}">${item.GWAMOK_NM}</td> <td>${item.HAKJUM || '3'}</td> <td>${item.GWAMOK_GBN || '주'}</td> <td class="text-left">${item.SIGAN_CONT || ''}</td> <td>${item.BOK1 || ''}</td> <td>${item.BOK2 || ''}</td> 
             <td>${item.BU || ''}</td>   <td>${item.DF_FG || ''}</td> <td>${item.RE_SUGANG || ''}</td> <td>${item.TRANS_YN || ''}</td> </tr>
     `).join('');
@@ -186,36 +182,43 @@ window.renderGrid = function () {
 };
 
 // 3. 삭제 함수
-function deleteLecture(code) {
+async function deleteLecture(code, name) {
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
-    if (!confirm(`[수강번호 : ${code}]  과목을 삭제 하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
-    list = list.filter(i => i.SUGANG_NO !== code);
-    localStorage.setItem('custom_lecture_data', JSON.stringify(list));
-    window.updateGridCount();
-    window.updateGridStats();
 
-    renderGrid();
+    const result = await CustomModal.show(`${name}<br>과목을 삭제 하시겠습니까?`, 'confirm');
+
+    // 2. 사용자가 '확인'을 눌렀을 때만 삭제 로직 실행
+    if (result) {
+        let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
+
+        list = list.filter(i => i.SUGANG_NO !== code);
+        localStorage.setItem('custom_lecture_data', JSON.stringify(list));
+
+        // 3. 그리드 및 통계 갱신
+        window.updateGridCount();
+        window.updateGridStats();
+        renderGrid();
+
+        // (선택사항) 삭제 완료 알림
+        await CustomModal.show("삭제되었습니다!");
+    }
 }
 
-window.applyFromFixed = function (code, name, gubun, isu, time) {
-    if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
-    // 1. 신청 의사 확인
+window.applyFromFixed = async function(code, name, gubun, isu, time) {
 
     // 1. 전달받은 인자로 데이터 객체 생성
     const newItem = {
         SUGANG_NO: code,
         GWAMOK_NM: name,
-        HAKSU_GBN: gubun,      // 구분
-        GYO_GBN_NM: isu,       // 이수구분
-        HAKJUM: "3",           // 기본값 (필요시 인자로 추가 가능)
-        GWAMOK_GBN: "주",       // 주야
-        SIGAN_CONT: time,      // 강의시간
-        BOK1: "", BOK2: "", BU: "",
-        DF_FG: "",         // 분반
+        HAKSU_GBN: gubun, // 구분
+        GYO_GBN_NM: isu, // 이수구분
+        HAKJUM: "3", // 기본값 (필요시 인자로 추가 가능)
+        GWAMOK_GBN: "주", // 주야
+        SIGAN_CONT: time, // 강의시간
+        BOK1: "",
+        BOK2: "",
+        BU: "",
+        DF_FG: "", // 분반
         RE_SUGANG: "",
         TRANS_YN: "N"
     };
@@ -223,15 +226,26 @@ window.applyFromFixed = function (code, name, gubun, isu, time) {
     // 2. 로컬 스토리지 저장 로직
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
 
+
+    // ★ [추가] 버튼 찾기 및 '완료' 텍스트로 교체
+    // 클래스가 btn-apply 이면서 onclick 인자에 해당 code가 포함된 버튼을 찾습니다.
+    const targetBtn = document.querySelector(`.btn-apply[onclick*="'${code}'"]`);
+
+    if (targetBtn) {
+        const parentTd = targetBtn.parentElement;
+        // 버튼을 지우고 빨간색 텍스트 삽입
+        parentTd.innerHTML = '<span style="color: red; font-weight: bold; font-size: 0.9em;">완료</span>';
+    }
+
     if (list.some(i => i.SUGANG_NO === code)) {
-        alert("이미 하단 리스트에 신청된 과목입니다.");
+        await CustomModal.show("이미 하단 리스트에 신청된 과목입니다.");
         return;
     }
 
     list.push(newItem);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
 
-    alert("수강신청이 성공적으로 저장되었습니다!")
+    await CustomModal.show("저장되었습니다!");
 
     // 3. 하단 커스텀 그리드 갱신
     if (typeof window.renderGrid === 'function') {
@@ -242,7 +256,7 @@ window.applyFromFixed = function (code, name, gubun, isu, time) {
 };
 
 
-window.updateGridCount = function () {
+window.updateGridCount = function() {
     const countElement = document.getElementById('GridBasketMiniCnt');
     if (countElement) {
         // 로컬스토리지에서 데이터를 가져와 개수 확인
@@ -252,7 +266,7 @@ window.updateGridCount = function () {
 };
 // ... (기존 window.handleFastApply 등 함수 정의 코드 뒤에 추가)
 
-window.updateGridStats = function () {
+window.updateGridStats = function() {
     // 1. 요소 가져오기
     const countElement = document.getElementById('GridBasketMiniCnt');
     const sumElement = document.getElementById('GridBasketSum');
@@ -276,14 +290,60 @@ window.updateGridStats = function () {
         sumElement.innerText = totalHakjum;
     }
 };
+const CustomModal = {
+    show(message, type = 'alert') {
+        return new Promise((resolve) => {
+            const isConfirm = type === 'confirm';
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+
+            const sizeClass = isConfirm ? 'confirm-size' : 'alert-size';
+            // Confirm일 때만 아이콘과 중앙 정렬 클래스 적용
+            const bodyClass = isConfirm ? 'modal-body center' : 'modal-body';
+            const iconHtml = isConfirm ? `<div class="modal-icon">!</div>` : '';
+            const confirmBtnClass = isConfirm ? 'confirm-btn has-divider' : 'confirm-btn';
+            const cancelBtnHtml = isConfirm ? `<button class="cancel-btn">취 소</button>` : '';
+
+            overlay.innerHTML = `
+                <div class="modal-box ${sizeClass}">
+                    <div class="modal-header">
+                        <span class="title">알림</span>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="${bodyClass}">
+                        ${iconHtml}
+                        <div>${message}</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="${confirmBtnClass}">확 인</button>
+                        ${cancelBtnHtml}
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+
+            const handleAction = (result) => {
+                overlay.remove();
+                resolve(result);
+            };
+
+            overlay.querySelector('.confirm-btn').onclick = () => handleAction(true);
+            if (isConfirm) {
+                overlay.querySelector('.cancel-btn').onclick = () => handleAction(false);
+            }
+            overlay.querySelector('.close-btn').onclick = () => handleAction(false);
+        });
+    }
+};
+
 
 // 1. 강제 호출
 window.renderGrid();
 
 // 2. 만약의 경우를 대비해 jQuery가 있다면 한번 더 호출
 if (window.jQuery) {
-    $(document).ready(function () {
+    $(document).ready(function() {
         window.renderGrid();
     });
 }
-
