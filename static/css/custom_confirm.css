@@ -1,0 +1,163 @@
+/* 오버레이 */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease-out;
+}
+
+
+/* 모달 공통 박스 */
+
+.modal-box {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    animation: zoomIn 0.2s ease-out;
+    overflow: hidden;
+}
+
+
+/* 크기 분리 */
+
+.modal-box.alert-size {
+    width: 450px;
+    height: 240px;
+}
+
+.modal-box.confirm-size {
+    width: 480px;
+}
+
+
+/* 헤더 */
+
+.modal-header {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header .title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #bbb;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+/* 본문 */
+
+.modal-body {
+    padding: 30px 25px;
+    /* 상하 여백을 40px -> 30px로 축소 */
+    text-align: left;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+    min-height: 60px;
+    /* 최소 높이를 100px -> 60px로 축소하여 공간 확보 */
+}
+
+
+/* Confirm 모드 시 스타일 */
+
+.modal-box.confirm-size .modal-body {
+    padding: 40px 25px;
+    /* 컨펌창은 기존의 넉넉한 여백 유지 */
+    text-align: center;
+    min-height: 120px;
+}
+
+
+/* 빨간색 경고 아이콘 */
+
+.modal-icon {
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #e74c3c;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    color: #e74c3c;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+}
+
+
+/* 푸터 */
+
+.modal-footer {
+    border-top: 1px solid #f2f2f2;
+    display: flex;
+}
+
+.modal-footer button {
+    flex: 1;
+    padding: 18px;
+    background: none;
+    border: none;
+    font-size: 1.15rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    color: #2d6a4f;
+    letter-spacing: 2px;
+}
+
+.confirm-btn.has-divider {
+    border-right: 1px solid #f2f2f2 !important;
+}
+
+.cancel-btn {
+    color: #888;
+}
+
+.modal-footer button:hover {
+    background-color: #fafafa;
+}
+
+
+/* 애니메이션 */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

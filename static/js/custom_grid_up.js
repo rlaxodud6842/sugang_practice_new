@@ -52,81 +52,53 @@ function generateRandomTime() {
     };
 }
 
-function showError({ message, focus, clear }) {
-    const jconfirm = document.querySelector('.jconfirm');
-    const p = jconfirm.querySelector("p");
-
-    p.textContent = message;
-    jconfirm.style.display = "block";
-
-    if (clear && focus) {
-        document.getElementById(focus).value = "";
-    }
-
-    if (focus) {
-        document.getElementById(focus).focus();
-    }
-}
-
-function closeConfirm() {
-    const modal = document.getElementsByClassName('jconfirm')[0];
-    if (modal) {
-        modal.style.display = "none";
-    }
-}
-
-
 // 시간을 분 단위 숫자로 변환 (예: "13:30" -> 810)
 function timeToMin(timeStr) {
     const [hh, mm] = timeStr.split(':').map(Number);
     return hh * 60 + mm;
 }
-window.handleFastApply = function() {
+
+window.handleFastApply = async function() {
     const codeInput = document.getElementById('pGwamokCd');
     const inputCode = codeInput.value.trim(); // 입력된 값 (예: '2026', '7777' 등)
 
     // 1. 유효성 검사 (숫자만, 최대 4자리)
     const isNumeric = /^[0-9]+$/.test(inputCode); // 숫자 체크 정규식
 
+    // 1. 필수 입력 체크
     if (!inputCode) {
-        showError({
-            message: "수강번호를 입력해주세요.",
-            focus: "pGwamokCd"
-        });
+        await CustomModal.show("수강번호를 입력해주세요.");
+        inputElement.focus();
         return;
     }
 
+    // 2. 숫자 형식 체크
     if (!isNumeric) {
-        showError({
-            message: "수강번호는 숫자만 입력 가능합니다.",
-            focus: "pGwamokCd",
-            clear: true
-        });
+        await CustomModal.show("수강번호는 숫자만 입력 가능합니다.");
+        inputElement.value = ""; // clear: true 로직
+        inputElement.focus();
         return;
     }
 
+    // 3. 길이 체크
     if (inputCode.length > 4) {
-        showError({
-            message: "수강번호는 최대 4자리까지만 입력 가능합니다.",
-            focus: "pGwamokCd"
-        });
+        await CustomModal.show("수강번호는 최대 4자리까지만 입력 가능합니다.");
+        inputElement.focus();
         return;
     }
 
-    // 1. 중복 체크 (수강번호 중복)
+    // 4. 중복 체크
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
     if (list.some(i => i.SUGANG_NO === inputCode)) {
-        alert("이미 신청된 수강번호입니다.");
+        await CustomModal.show("이미 신청된 수강번호입니다.");
+        inputElement.focus();
         return;
     }
+
 
     // 2. 입력된 번호에 매칭할 랜덤 과목명 생성 (MZ 테마)
     const randomCourse = courseDB[Math.floor(Math.random() * courseDB.length)];
     const timeInfo = generateRandomTime(); // 요일/시간 생성
-
-    if (!confirm(`[수강번호 : ${inputCode}] 과목을 신청하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
 
     // 3. 시간대 중복 정밀 체크
     const isOverlapped = list.some(i => {
@@ -150,7 +122,7 @@ window.handleFastApply = function() {
     });
 
     if (isOverlapped) {
-        alert(`🚨 시간표 충돌!\n새 과목 시간: ${timeInfo.text}\n다른 번호를 입력하거나 다시 시도하세요.`);
+        await CustomModal.show(`🚨 시간표 충돌!\n새 과목 시간: ${timeInfo.text}\n다른 번호를 입력하거나 다시 시도하세요.`);
         return;
     }
 
@@ -180,9 +152,7 @@ window.handleFastApply = function() {
         window.updateGridStats();
         window.renderGrid();
     }
-
-
-    alert("수강신청이 성공적으로 저장되었습니다!")
+    await CustomModal.show(`저장되었습니다!`);
 
     // 6. 입력창 초기화
     codeInput.value = "";
@@ -225,11 +195,7 @@ function deleteLecture(code) {
     renderGrid();
 }
 
-window.applyFromFixed = function(code, name, gubun, isu, time) {
-    if (!confirm(`[수강번호 : ${code}] 과목을 신청하시겠습니까?`)) {
-        return; // '취소' 클릭 시 함수 종료
-    }
-    // 1. 신청 의사 확인
+window.applyFromFixed = async function(code, name, gubun, isu, time) {
 
     // 1. 전달받은 인자로 데이터 객체 생성
     const newItem = {
@@ -252,14 +218,14 @@ window.applyFromFixed = function(code, name, gubun, isu, time) {
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
 
     if (list.some(i => i.SUGANG_NO === code)) {
-        alert("이미 하단 리스트에 신청된 과목입니다.");
+        await CustomModal.show("이미 하단 리스트에 신청된 과목입니다.");
         return;
     }
 
     list.push(newItem);
     localStorage.setItem('custom_lecture_data', JSON.stringify(list));
 
-    alert("수강신청이 성공적으로 저장되었습니다!")
+    await CustomModal.show("수강신청이 성공적으로 저장되었습니다!");
 
     // 3. 하단 커스텀 그리드 갱신
     if (typeof window.renderGrid === 'function') {
@@ -304,6 +270,63 @@ window.updateGridStats = function() {
         sumElement.innerText = totalHakjum;
     }
 };
+
+// 커스텀 컨펌
+
+const CustomModal = {
+    show(message, type = 'alert') {
+        return new Promise((resolve) => {
+            const isConfirm = type === 'confirm';
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+
+            const sizeClass = isConfirm ? 'confirm-size' : 'alert-size';
+            const bodyClass = isConfirm ? 'modal-body center' : 'modal-body';
+            const iconHtml = isConfirm ? `<div class="modal-icon">!</div>` : '';
+            const confirmBtnClass = isConfirm ? 'confirm-btn has-divider' : 'confirm-btn';
+            const cancelBtnHtml = isConfirm ? `<button class="cancel-btn">취 소</button>` : '';
+
+            overlay.innerHTML = `
+                <div class="modal-box ${sizeClass}">
+                    <div class="modal-header">
+                        <span class="title">알림</span>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="${bodyClass}">
+                        ${iconHtml}
+                        <div>${message}</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="${confirmBtnClass}">확 인</button>
+                        ${cancelBtnHtml}
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(overlay);
+
+            const handleAction = (result) => {
+                overlay.remove();
+                resolve(result);
+            };
+
+            // 확인 버튼 이벤트
+            overlay.querySelector('.confirm-btn').onclick = () => handleAction(true);
+
+            // 취소 버튼 이벤트 (있을 경우만)
+            if (isConfirm) {
+                overlay.querySelector('.cancel-btn').onclick = () => handleAction(false);
+            }
+
+            // X 버튼 이벤트
+            overlay.querySelector('.close-btn').onclick = () => handleAction(false);
+
+            // ★ 중요: 배경 클릭(overlay.onclick) 관련 코드를 삭제하여 
+            // 사용자가 버튼을 눌러야만 창이 닫히도록 설정함.
+        });
+    }
+};
+
 
 // 1. 강제 호출
 window.renderGrid();

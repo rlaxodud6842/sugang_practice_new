@@ -5,13 +5,13 @@
     <title>수강신청시스템</title>
 
     <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-    <link href="./static/css/login.min.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/ui.min.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/color.min.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/toastr.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/jquery-ui.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/jqgrid.css" rel="stylesheet" type="text/css" />
     <link href="./static/css/custom_grid.css" rel="stylesheet" type="text/css" />
+    <link href="./static/css/custom_confirm.css" rel="stylesheet" type="text/css" />
 
     <style>
       .ui-jqgrid .ui-jqgrid-htable th div {
@@ -746,11 +746,10 @@
     <script src="./static/js/fn-env.min.js" type="text/javascript"></script>
     <script src="./static/js/fn-infomation.min.js" type="text/javascript"></script>
     <script src="./static/js/custom_grid_up.js" type="text/javascript"></script>
+    <script src="./static/js/custom_confirm.js" type="text/javascript"></script>
 
     <script type="module" src="./static/js/fn-basket.min.js"></script>
-    <script type="module" src="./static/js/fn-basket.min.js"></script>
-    <script type="module" src="./static/js/fn-basket.min.js"></script>
-
+  
     <!-- HTML 끝 부분, </body> 직전에 -->
     <script>
       function resizeGrid() {
@@ -768,40 +767,3 @@
     </script>
   </body>
 </html>
-
-
-  <div class="jconfirm jconfirm-light jconfirm-open" style="display:none;">
-    <div class="jconfirm-bg" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);"></div>
-    <div class="jconfirm-scrollpane">
-      <div class="jconfirm-row">
-        <div class="jconfirm-cell">
-          <div class="jconfirm-holder" style="padding-top: 40px; padding-bottom: 40px;">
-            <div class="jc-bs3-container">
-              <div class="jc-bs3-row">
-                <div class="jconfirm-box-container jconfirm-animated jconfirm-no-transition" style="transform: translate(0px, 0px); transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
-                  <div class="jconfirm-box jconfirm-hilight- jconfirm-type-default" role="dialog" aria-labelledby="jconfirm-box83270" tabindex="-1" style="width: 420px; transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1); transition-property: all, margin;">
-                    <div class="jconfirm-closeIcon" onclick="document.getElementsByClassName('jconfirm')[0].remove();" title="닫기" style="display: block;"></div>
-                    <div class="jconfirm-title-c">
-                      <span class="jconfirm-icon-c"></span><span class="jconfirm-title">알림</span>
-                    </div>
-                    <div class="jconfirm-content-pane no-scroll" style="transition-duration: 0.4s; transition-timing-function: cubic-bezier(0.36, 0.55, 0.19, 1);">
-                      <div class="jconfirm-content" id="jconfirm-box83270">
-                        <div>
-                          <p></p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="jconfirm-buttons">
-                      <button type="button" class="btn-main" onclick="closeConfirm()">확 인</button>
-                      <button type="button" class="btn-default" style="display: none;">x</button>
-                    </div>
-                    <div class="jconfirm-clear"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
