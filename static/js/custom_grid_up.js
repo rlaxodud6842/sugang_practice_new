@@ -182,17 +182,26 @@ window.renderGrid = function() {
 };
 
 // 3. 삭제 함수
-function deleteLecture(code, name) {
+async function deleteLecture(code, name) {
     let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
 
-    CustomModal.show(`${name}<br>과목을 삭제 하시겠습니까?`)
+    const result = await CustomModal.show(`${name}<br>과목을 삭제 하시겠습니까?`, 'confirm');
 
-    list = list.filter(i => i.SUGANG_NO !== code);
-    localStorage.setItem('custom_lecture_data', JSON.stringify(list));
-    window.updateGridCount();
-    window.updateGridStats();
+    // 2. 사용자가 '확인'을 눌렀을 때만 삭제 로직 실행
+    if (result) {
+        let list = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
 
-    renderGrid();
+        list = list.filter(i => i.SUGANG_NO !== code);
+        localStorage.setItem('custom_lecture_data', JSON.stringify(list));
+
+        // 3. 그리드 및 통계 갱신
+        window.updateGridCount();
+        window.updateGridStats();
+        renderGrid();
+
+        // (선택사항) 삭제 완료 알림
+        await CustomModal.show("삭제되었습니다!");
+    }
 }
 
 window.applyFromFixed = async function(code, name, gubun, isu, time) {
@@ -281,9 +290,6 @@ window.updateGridStats = function() {
         sumElement.innerText = totalHakjum;
     }
 };
-
-// 커스텀 컨펌
-
 const CustomModal = {
     show(message, type = 'alert') {
         return new Promise((resolve) => {
@@ -292,8 +298,9 @@ const CustomModal = {
             overlay.className = 'modal-overlay';
 
             const sizeClass = isConfirm ? 'confirm-size' : 'alert-size';
+            // Confirm일 때만 아이콘과 중앙 정렬 클래스 적용
             const bodyClass = isConfirm ? 'modal-body center' : 'modal-body';
-            const iconHtml = isConfirm ? ` < div class = "modal-icon" > ! < /div>` : '';
+            const iconHtml = isConfirm ? `<div class="modal-icon">!</div>` : '';
             const confirmBtnClass = isConfirm ? 'confirm-btn has-divider' : 'confirm-btn';
             const cancelBtnHtml = isConfirm ? `<button class="cancel-btn">취 소</button>` : '';
 
@@ -321,19 +328,11 @@ const CustomModal = {
                 resolve(result);
             };
 
-            // 확인 버튼 이벤트
             overlay.querySelector('.confirm-btn').onclick = () => handleAction(true);
-
-            // 취소 버튼 이벤트 (있을 경우만)
             if (isConfirm) {
                 overlay.querySelector('.cancel-btn').onclick = () => handleAction(false);
             }
-
-            // X 버튼 이벤트
             overlay.querySelector('.close-btn').onclick = () => handleAction(false);
-
-            // ★ 중요: 배경 클릭(overlay.onclick) 관련 코드를 삭제하여 
-            // 사용자가 버튼을 눌러야만 창이 닫히도록 설정함.
         });
     }
 };
