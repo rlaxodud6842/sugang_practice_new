@@ -24,6 +24,12 @@ for (let i = 1; i <= 50; i++) {
     });
 }
 
+document.getElementById("pGwamokCd").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        handleFastApply();
+    }
+});
+
 // 랜덤 시간 생성기 (월~금, 지정된 타임슬롯)
 function generateRandomTime() {
     // 1. 대학에서 흔히 쓰이는 요일 패턴 (단일 요일 + 복수 요일)
