@@ -24,6 +24,12 @@ for (let i = 1; i <= 50; i++) {
     });
 }
 
+document.getElementById("pGwamokCd").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        handleFastApply();
+    }
+});
+
 // 랜덤 시간 생성기 (월~금, 지정된 타임슬롯)
 function generateRandomTime() {
     // 1. 대학에서 흔히 쓰이는 요일 패턴 (단일 요일 + 복수 요일)
@@ -58,7 +64,7 @@ function timeToMin(timeStr) {
     return hh * 60 + mm;
 }
 
-window.handleFastApply = async function() {
+window.handleFastApply = async function () {
     const codeInput = document.getElementById('pGwamokCd');
     const inputCode = codeInput.value.trim(); // 입력된 값 (예: '2026', '7777' 등)
 
@@ -159,7 +165,7 @@ window.handleFastApply = async function() {
     codeInput.focus();
 };
 // 1. 데이터 화면 출력 함수 (customgrid_1.0 스타일)
-window.renderGrid = function() {
+window.renderGrid = function () {
     const data = JSON.parse(localStorage.getItem('custom_lecture_data') || "[]");
     const tbody = document.getElementById('lectureBody');
     if (!tbody) return;
@@ -204,7 +210,7 @@ async function deleteLecture(code, name) {
     }
 }
 
-window.applyFromFixed = async function(code, name, gubun, isu, time) {
+window.applyFromFixed = async function (code, name, gubun, isu, time) {
 
     // 1. 전달받은 인자로 데이터 객체 생성
     const newItem = {
@@ -256,7 +262,7 @@ window.applyFromFixed = async function(code, name, gubun, isu, time) {
 };
 
 
-window.updateGridCount = function() {
+window.updateGridCount = function () {
     const countElement = document.getElementById('GridBasketMiniCnt');
     if (countElement) {
         // 로컬스토리지에서 데이터를 가져와 개수 확인
@@ -266,7 +272,7 @@ window.updateGridCount = function() {
 };
 // ... (기존 window.handleFastApply 등 함수 정의 코드 뒤에 추가)
 
-window.updateGridStats = function() {
+window.updateGridStats = function () {
     // 1. 요소 가져오기
     const countElement = document.getElementById('GridBasketMiniCnt');
     const sumElement = document.getElementById('GridBasketSum');
@@ -293,19 +299,22 @@ window.updateGridStats = function() {
 const CustomModal = {
     show(message, type = 'alert') {
         return new Promise((resolve) => {
+
+            // 이미 모달이 있으면 중복 생성 방지
+            if (document.querySelector('.modal-overlay')) return;
+
             const isConfirm = type === 'confirm';
             const overlay = document.createElement('div');
             overlay.className = 'modal-overlay';
 
             const sizeClass = isConfirm ? 'confirm-size' : 'alert-size';
-            // Confirm일 때만 아이콘과 중앙 정렬 클래스 적용
             const bodyClass = isConfirm ? 'modal-body center' : 'modal-body';
             const iconHtml = isConfirm ? `<div class="modal-icon">!</div>` : '';
             const confirmBtnClass = isConfirm ? 'confirm-btn has-divider' : 'confirm-btn';
             const cancelBtnHtml = isConfirm ? `<button class="cancel-btn">취 소</button>` : '';
 
             overlay.innerHTML = `
-                <div class="modal-box ${sizeClass}">
+                <div class="modal-box ${sizeClass}" tabindex="-1">
                     <div class="modal-header">
                         <span class="title">알림</span>
                         <button class="close-btn">&times;</button>
@@ -323,27 +332,57 @@ const CustomModal = {
 
             document.body.appendChild(overlay);
 
+            const modalBox = overlay.querySelector('.modal-box');
+            const confirmBtn = overlay.querySelector('.confirm-btn');
+            const cancelBtn = overlay.querySelector('.cancel-btn');
+            const closeBtn = overlay.querySelector('.close-btn');
+
+            // 모달로 포커스 이동
+            setTimeout(() => {
+                confirmBtn.focus();
+            }, 0);
+
             const handleAction = (result) => {
                 overlay.remove();
                 resolve(result);
             };
 
-            overlay.querySelector('.confirm-btn').onclick = () => handleAction(true);
-            if (isConfirm) {
-                overlay.querySelector('.cancel-btn').onclick = () => handleAction(false);
+            // 버튼 이벤트
+            confirmBtn.onclick = () => handleAction(true);
+
+            if (isConfirm && cancelBtn) {
+                cancelBtn.onclick = () => handleAction(false);
             }
-            overlay.querySelector('.close-btn').onclick = () => handleAction(false);
+
+            closeBtn.onclick = () => handleAction(false);
+
+            // 키보드 이벤트 처리
+            overlay.addEventListener('keydown', (e) => {
+
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    confirmBtn.click();
+                }
+
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleAction(false);
+                }
+
+            });
+
         });
     }
 };
-
 
 // 1. 강제 호출
 window.renderGrid();
 
 // 2. 만약의 경우를 대비해 jQuery가 있다면 한번 더 호출
 if (window.jQuery) {
-    $(document).ready(function() {
+    $(document).ready(function () {
         window.renderGrid();
     });
 }
