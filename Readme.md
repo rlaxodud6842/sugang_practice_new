@@ -3,7 +3,7 @@
 <br>
 <br>
 ## 🔗 프로젝트 링크
-- **서비스 바로가기:** [수강신청 연습 시스템](https://sugang.mydu.duckdns.org/sinchung)
+- **서비스 바로가기:** [수강신청 연습 시스템](https://sugang.mydu.duckdns.org/)
 <br>
 <br>
 
